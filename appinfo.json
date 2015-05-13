@@ -1,0 +1,23 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "yeahdev@gmail.com",
+    "longName": "HackOClock",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "HackOClock",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "574e27ce-f2e9-4c0e-9702-36c66eae0ffe",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
