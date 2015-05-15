@@ -4,13 +4,20 @@
         ""
     ],
     "companyName": "yeahdev@gmail.com",
-    "longName": "HackOClock",
+    "longName": "Hack o'clock",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/icon.png",
+                "menuIcon": true,
+                "name": "ICON",
+                "type": "png"
+            }
+        ]
     },
     "sdkVersion": "3",
-    "shortName": "HackOClock",
+    "shortName": "Hack o'clock",
     "targetPlatforms": [
         "aplite",
         "basalt"
