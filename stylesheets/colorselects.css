@@ -1,0 +1,1935 @@
+/*custom color for select menue*/
+/*Background Color HACK*/
+/*Inchworm*/
+#bgHack-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#bgHack-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#bgHack-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#bgHack-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#bgHack-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#bgHack-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#bgHack-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#bgHack-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#bgHack-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#bgHack-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#bgHack-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#bgHack-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#bgHack-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#bgHack-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#bgHack-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#bgHack-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#bgHack-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#bgHack-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#bgHack-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#bgHack-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#bgHack-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#bgHack-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#bgHack-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#bgHack-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#bgHack-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#bgHack-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#bgHack-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#bgHack-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#bgHack-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#bgHack-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#bgHack-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#bgHack-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#bgHack-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#bgHack-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#bgHack-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#bgHack-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#bgHack-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#bgHack-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#bgHack-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#bgHack-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#bgHack-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#bgHack-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#bgHack-menu li:nth-child(22) >  div{ background-color: #555500; }
+#bgHack-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#bgHack-menu li:nth-child(23) >  div{ background-color: #005500; }
+#bgHack-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#bgHack-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#bgHack-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#bgHack-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#bgHack-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#bgHack-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#bgHack-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#bgHack-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#bgHack-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#bgHack-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#bgHack-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#bgHack-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#bgHack-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#bgHack-menu li:nth-child(30) >  div{ background-color: #005555; }
+#bgHack-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#bgHack-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#bgHack-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#bgHack-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#bgHack-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#bgHack-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#bgHack-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#bgHack-menu li:nth-child(34) >  div{ background-color: #550000; }
+#bgHack-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#bgHack-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#bgHack-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#bgHack-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#bgHack-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#bgHack-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#bgHack-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#bgHack-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#bgHack-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#bgHack-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#bgHack-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#bgHack-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#bgHack-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#bgHack-menu li:nth-child(41) >  div{ background-color: #000055; }
+#bgHack-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#bgHack-menu li:nth-child(42) >  div{ background-color: #550055; }
+#bgHack-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#bgHack-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#bgHack-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#bgHack-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#bgHack-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#bgHack-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#bgHack-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#bgHack-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#bgHack-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#bgHack-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#bgHack-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#bgHack-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#bgHack-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#bgHack-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#bgHack-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#bgHack-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#bgHack-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#bgHack-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#bgHack-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#bgHack-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#bgHack-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#bgHack-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#bgHack-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#bgHack-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#bgHack-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#bgHack-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#bgHack-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#bgHack-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#bgHack-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#bgHack-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#bgHack-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#bgHack-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#bgHack-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#bgHack-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#bgHack-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#bgHack-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#bgHack-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#bgHack-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#bgHack-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#bgHack-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#bgHack-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#bgHack-menu li:nth-child(63) >  div{ background-color: #555555; }
+#bgHack-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#bgHack-menu li:nth-child(64) >  div{ background-color: #000000; }
+#bgHack-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color HACK*/
+/*Inchworm*/
+#tcHack-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#tcHack-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#tcHack-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#tcHack-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#tcHack-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#tcHack-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#tcHack-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#tcHack-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#tcHack-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#tcHack-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#tcHack-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#tcHack-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#tcHack-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#tcHack-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#tcHack-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#tcHack-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#tcHack-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#tcHack-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#tcHack-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#tcHack-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#tcHack-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#tcHack-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#tcHack-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#tcHack-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#tcHack-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#tcHack-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#tcHack-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#tcHack-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#tcHack-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#tcHack-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#tcHack-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#tcHack-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#tcHack-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#tcHack-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#tcHack-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#tcHack-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#tcHack-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#tcHack-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#tcHack-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#tcHack-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#tcHack-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#tcHack-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#tcHack-menu li:nth-child(22) >  div{ background-color: #555500; }
+#tcHack-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#tcHack-menu li:nth-child(23) >  div{ background-color: #005500; }
+#tcHack-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#tcHack-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#tcHack-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#tcHack-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#tcHack-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#tcHack-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#tcHack-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#tcHack-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#tcHack-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#tcHack-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#tcHack-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#tcHack-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#tcHack-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#tcHack-menu li:nth-child(30) >  div{ background-color: #005555; }
+#tcHack-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#tcHack-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#tcHack-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#tcHack-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#tcHack-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#tcHack-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#tcHack-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#tcHack-menu li:nth-child(34) >  div{ background-color: #550000; }
+#tcHack-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#tcHack-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#tcHack-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#tcHack-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#tcHack-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#tcHack-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#tcHack-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#tcHack-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#tcHack-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#tcHack-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#tcHack-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#tcHack-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#tcHack-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#tcHack-menu li:nth-child(41) >  div{ background-color: #000055; }
+#tcHack-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#tcHack-menu li:nth-child(42) >  div{ background-color: #550055; }
+#tcHack-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#tcHack-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#tcHack-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#tcHack-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#tcHack-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#tcHack-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#tcHack-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#tcHack-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#tcHack-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#tcHack-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#tcHack-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#tcHack-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#tcHack-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#tcHack-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#tcHack-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#tcHack-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#tcHack-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#tcHack-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#tcHack-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#tcHack-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#tcHack-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#tcHack-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#tcHack-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#tcHack-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#tcHack-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#tcHack-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#tcHack-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#tcHack-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#tcHack-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#tcHack-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#tcHack-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#tcHack-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#tcHack-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#tcHack-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#tcHack-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#tcHack-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#tcHack-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#tcHack-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#tcHack-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#tcHack-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#tcHack-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#tcHack-menu li:nth-child(63) >  div{ background-color: #555555; }
+#tcHack-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#tcHack-menu li:nth-child(64) >  div{ background-color: #000000; }
+#tcHack-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+
+/*Background Color BEER*/
+/*Inchworm*/
+#bgBeer-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#bgBeer-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#bgBeer-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#bgBeer-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#bgBeer-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#bgBeer-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#bgBeer-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#bgBeer-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#bgBeer-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#bgBeer-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#bgBeer-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#bgBeer-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#bgBeer-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#bgBeer-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#bgBeer-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#bgBeer-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#bgBeer-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#bgBeer-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#bgBeer-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#bgBeer-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#bgBeer-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#bgBeer-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#bgBeer-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#bgBeer-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#bgBeer-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#bgBeer-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#bgBeer-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#bgBeer-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#bgBeer-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#bgBeer-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#bgBeer-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#bgBeer-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#bgBeer-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#bgBeer-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#bgBeer-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#bgBeer-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#bgBeer-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#bgBeer-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#bgBeer-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#bgBeer-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#bgBeer-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#bgBeer-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#bgBeer-menu li:nth-child(22) >  div{ background-color: #555500; }
+#bgBeer-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#bgBeer-menu li:nth-child(23) >  div{ background-color: #005500; }
+#bgBeer-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#bgBeer-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#bgBeer-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#bgBeer-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#bgBeer-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#bgBeer-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#bgBeer-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#bgBeer-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#bgBeer-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#bgBeer-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#bgBeer-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#bgBeer-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#bgBeer-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#bgBeer-menu li:nth-child(30) >  div{ background-color: #005555; }
+#bgBeer-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#bgBeer-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#bgBeer-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#bgBeer-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#bgBeer-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#bgBeer-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#bgBeer-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#bgBeer-menu li:nth-child(34) >  div{ background-color: #550000; }
+#bgBeer-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#bgBeer-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#bgBeer-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#bgBeer-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#bgBeer-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#bgBeer-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#bgBeer-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#bgBeer-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#bgBeer-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#bgBeer-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#bgBeer-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#bgBeer-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#bgBeer-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#bgBeer-menu li:nth-child(41) >  div{ background-color: #000055; }
+#bgBeer-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#bgBeer-menu li:nth-child(42) >  div{ background-color: #550055; }
+#bgBeer-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#bgBeer-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#bgBeer-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#bgBeer-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#bgBeer-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#bgBeer-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#bgBeer-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#bgBeer-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#bgBeer-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#bgBeer-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#bgBeer-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#bgBeer-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#bgBeer-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#bgBeer-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#bgBeer-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#bgBeer-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#bgBeer-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#bgBeer-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#bgBeer-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#bgBeer-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#bgBeer-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#bgBeer-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#bgBeer-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#bgBeer-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#bgBeer-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#bgBeer-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#bgBeer-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#bgBeer-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#bgBeer-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#bgBeer-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#bgBeer-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#bgBeer-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#bgBeer-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#bgBeer-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#bgBeer-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#bgBeer-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#bgBeer-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#bgBeer-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#bgBeer-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#bgBeer-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#bgBeer-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#bgBeer-menu li:nth-child(63) >  div{ background-color: #555555; }
+#bgBeer-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#bgBeer-menu li:nth-child(64) >  div{ background-color: #000000; }
+#bgBeer-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color BEER*/
+/*Inchworm*/
+#tcBeer-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#tcBeer-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#tcBeer-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#tcBeer-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#tcBeer-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#tcBeer-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#tcBeer-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#tcBeer-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#tcBeer-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#tcBeer-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#tcBeer-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#tcBeer-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#tcBeer-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#tcBeer-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#tcBeer-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#tcBeer-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#tcBeer-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#tcBeer-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#tcBeer-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#tcBeer-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#tcBeer-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#tcBeer-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#tcBeer-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#tcBeer-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#tcBeer-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#tcBeer-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#tcBeer-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#tcBeer-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#tcBeer-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#tcBeer-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#tcBeer-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#tcBeer-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#tcBeer-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#tcBeer-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#tcBeer-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#tcBeer-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#tcBeer-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#tcBeer-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#tcBeer-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#tcBeer-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#tcBeer-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#tcBeer-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#tcBeer-menu li:nth-child(22) >  div{ background-color: #555500; }
+#tcBeer-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#tcBeer-menu li:nth-child(23) >  div{ background-color: #005500; }
+#tcBeer-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#tcBeer-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#tcBeer-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#tcBeer-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#tcBeer-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#tcBeer-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#tcBeer-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#tcBeer-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#tcBeer-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#tcBeer-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#tcBeer-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#tcBeer-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#tcBeer-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#tcBeer-menu li:nth-child(30) >  div{ background-color: #005555; }
+#tcBeer-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#tcBeer-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#tcBeer-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#tcBeer-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#tcBeer-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#tcBeer-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#tcBeer-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#tcBeer-menu li:nth-child(34) >  div{ background-color: #550000; }
+#tcBeer-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#tcBeer-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#tcBeer-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#tcBeer-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#tcBeer-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#tcBeer-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#tcBeer-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#tcBeer-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#tcBeer-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#tcBeer-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#tcBeer-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#tcBeer-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#tcBeer-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#tcBeer-menu li:nth-child(41) >  div{ background-color: #000055; }
+#tcBeer-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#tcBeer-menu li:nth-child(42) >  div{ background-color: #550055; }
+#tcBeer-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#tcBeer-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#tcBeer-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#tcBeer-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#tcBeer-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#tcBeer-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#tcBeer-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#tcBeer-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#tcBeer-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#tcBeer-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#tcBeer-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#tcBeer-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#tcBeer-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#tcBeer-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#tcBeer-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#tcBeer-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#tcBeer-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#tcBeer-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#tcBeer-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#tcBeer-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#tcBeer-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#tcBeer-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#tcBeer-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#tcBeer-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#tcBeer-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#tcBeer-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#tcBeer-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#tcBeer-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#tcBeer-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#tcBeer-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#tcBeer-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#tcBeer-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#tcBeer-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#tcBeer-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#tcBeer-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#tcBeer-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#tcBeer-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#tcBeer-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#tcBeer-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#tcBeer-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#tcBeer-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#tcBeer-menu li:nth-child(63) >  div{ background-color: #555555; }
+#tcBeer-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#tcBeer-menu li:nth-child(64) >  div{ background-color: #000000; }
+#tcBeer-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+
+/*Background Color O'Clock*/
+/*Inchworm*/
+#bgOclock-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#bgOclock-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#bgOclock-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#bgOclock-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#bgOclock-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#bgOclock-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#bgOclock-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#bgOclock-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#bgOclock-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#bgOclock-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#bgOclock-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#bgOclock-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#bgOclock-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#bgOclock-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#bgOclock-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#bgOclock-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#bgOclock-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#bgOclock-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#bgOclock-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#bgOclock-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#bgOclock-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#bgOclock-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#bgOclock-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#bgOclock-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#bgOclock-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#bgOclock-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#bgOclock-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#bgOclock-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#bgOclock-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#bgOclock-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#bgOclock-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#bgOclock-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#bgOclock-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#bgOclock-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#bgOclock-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#bgOclock-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#bgOclock-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#bgOclock-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#bgOclock-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#bgOclock-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#bgOclock-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#bgOclock-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#bgOclock-menu li:nth-child(22) >  div{ background-color: #555500; }
+#bgOclock-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#bgOclock-menu li:nth-child(23) >  div{ background-color: #005500; }
+#bgOclock-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#bgOclock-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#bgOclock-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#bgOclock-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#bgOclock-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#bgOclock-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#bgOclock-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#bgOclock-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#bgOclock-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#bgOclock-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#bgOclock-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#bgOclock-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#bgOclock-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#bgOclock-menu li:nth-child(30) >  div{ background-color: #005555; }
+#bgOclock-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#bgOclock-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#bgOclock-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#bgOclock-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#bgOclock-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#bgOclock-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#bgOclock-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#bgOclock-menu li:nth-child(34) >  div{ background-color: #550000; }
+#bgOclock-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#bgOclock-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#bgOclock-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#bgOclock-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#bgOclock-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#bgOclock-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#bgOclock-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#bgOclock-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#bgOclock-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#bgOclock-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#bgOclock-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#bgOclock-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#bgOclock-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#bgOclock-menu li:nth-child(41) >  div{ background-color: #000055; }
+#bgOclock-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#bgOclock-menu li:nth-child(42) >  div{ background-color: #550055; }
+#bgOclock-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#bgOclock-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#bgOclock-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#bgOclock-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#bgOclock-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#bgOclock-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#bgOclock-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#bgOclock-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#bgOclock-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#bgOclock-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#bgOclock-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#bgOclock-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#bgOclock-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#bgOclock-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#bgOclock-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#bgOclock-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#bgOclock-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#bgOclock-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#bgOclock-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#bgOclock-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#bgOclock-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#bgOclock-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#bgOclock-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#bgOclock-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#bgOclock-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#bgOclock-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#bgOclock-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#bgOclock-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#bgOclock-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#bgOclock-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#bgOclock-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#bgOclock-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#bgOclock-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#bgOclock-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#bgOclock-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#bgOclock-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#bgOclock-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#bgOclock-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#bgOclock-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#bgOclock-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#bgOclock-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#bgOclock-menu li:nth-child(63) >  div{ background-color: #555555; }
+#bgOclock-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#bgOclock-menu li:nth-child(64) >  div{ background-color: #000000; }
+#bgOclock-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color O'Clock*/
+/*Inchworm*/
+#tcOclock-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#tcOclock-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#tcOclock-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#tcOclock-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#tcOclock-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#tcOclock-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#tcOclock-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#tcOclock-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#tcOclock-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#tcOclock-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#tcOclock-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#tcOclock-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#tcOclock-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#tcOclock-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#tcOclock-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#tcOclock-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#tcOclock-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#tcOclock-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#tcOclock-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#tcOclock-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#tcOclock-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#tcOclock-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#tcOclock-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#tcOclock-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#tcOclock-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#tcOclock-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#tcOclock-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#tcOclock-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#tcOclock-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#tcOclock-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#tcOclock-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#tcOclock-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#tcOclock-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#tcOclock-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#tcOclock-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#tcOclock-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#tcOclock-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#tcOclock-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#tcOclock-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#tcOclock-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#tcOclock-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#tcOclock-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#tcOclock-menu li:nth-child(22) >  div{ background-color: #555500; }
+#tcOclock-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#tcOclock-menu li:nth-child(23) >  div{ background-color: #005500; }
+#tcOclock-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#tcOclock-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#tcOclock-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#tcOclock-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#tcOclock-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#tcOclock-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#tcOclock-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#tcOclock-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#tcOclock-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#tcOclock-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#tcOclock-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#tcOclock-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#tcOclock-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#tcOclock-menu li:nth-child(30) >  div{ background-color: #005555; }
+#tcOclock-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#tcOclock-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#tcOclock-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#tcOclock-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#tcOclock-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#tcOclock-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#tcOclock-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#tcOclock-menu li:nth-child(34) >  div{ background-color: #550000; }
+#tcOclock-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#tcOclock-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#tcOclock-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#tcOclock-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#tcOclock-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#tcOclock-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#tcOclock-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#tcOclock-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#tcOclock-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#tcOclock-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#tcOclock-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#tcOclock-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#tcOclock-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#tcOclock-menu li:nth-child(41) >  div{ background-color: #000055; }
+#tcOclock-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#tcOclock-menu li:nth-child(42) >  div{ background-color: #550055; }
+#tcOclock-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#tcOclock-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#tcOclock-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#tcOclock-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#tcOclock-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#tcOclock-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#tcOclock-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#tcOclock-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#tcOclock-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#tcOclock-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#tcOclock-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#tcOclock-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#tcOclock-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#tcOclock-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#tcOclock-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#tcOclock-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#tcOclock-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#tcOclock-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#tcOclock-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#tcOclock-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#tcOclock-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#tcOclock-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#tcOclock-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#tcOclock-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#tcOclock-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#tcOclock-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#tcOclock-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#tcOclock-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#tcOclock-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#tcOclock-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#tcOclock-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#tcOclock-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#tcOclock-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#tcOclock-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#tcOclock-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#tcOclock-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#tcOclock-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#tcOclock-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#tcOclock-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#tcOclock-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#tcOclock-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#tcOclock-menu li:nth-child(63) >  div{ background-color: #555555; }
+#tcOclock-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#tcOclock-menu li:nth-child(64) >  div{ background-color: #000000; }
+#tcOclock-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+
+/*Background Color TIME*/
+/*Inchworm*/
+#bgTime-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#bgTime-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#bgTime-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#bgTime-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#bgTime-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#bgTime-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#bgTime-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#bgTime-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#bgTime-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#bgTime-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#bgTime-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#bgTime-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#bgTime-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#bgTime-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#bgTime-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#bgTime-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#bgTime-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#bgTime-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#bgTime-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#bgTime-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#bgTime-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#bgTime-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#bgTime-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#bgTime-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#bgTime-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#bgTime-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#bgTime-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#bgTime-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#bgTime-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#bgTime-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#bgTime-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#bgTime-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#bgTime-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#bgTime-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#bgTime-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#bgTime-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#bgTime-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#bgTime-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#bgTime-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#bgTime-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#bgTime-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#bgTime-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#bgTime-menu li:nth-child(22) >  div{ background-color: #555500; }
+#bgTime-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#bgTime-menu li:nth-child(23) >  div{ background-color: #005500; }
+#bgTime-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#bgTime-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#bgTime-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#bgTime-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#bgTime-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#bgTime-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#bgTime-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#bgTime-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#bgTime-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#bgTime-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#bgTime-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#bgTime-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#bgTime-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#bgTime-menu li:nth-child(30) >  div{ background-color: #005555; }
+#bgTime-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#bgTime-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#bgTime-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#bgTime-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#bgTime-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#bgTime-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#bgTime-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#bgTime-menu li:nth-child(34) >  div{ background-color: #550000; }
+#bgTime-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#bgTime-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#bgTime-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#bgTime-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#bgTime-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#bgTime-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#bgTime-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#bgTime-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#bgTime-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#bgTime-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#bgTime-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#bgTime-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#bgTime-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#bgTime-menu li:nth-child(41) >  div{ background-color: #000055; }
+#bgTime-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#bgTime-menu li:nth-child(42) >  div{ background-color: #550055; }
+#bgTime-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#bgTime-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#bgTime-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#bgTime-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#bgTime-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#bgTime-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#bgTime-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#bgTime-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#bgTime-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#bgTime-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#bgTime-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#bgTime-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#bgTime-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#bgTime-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#bgTime-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#bgTime-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#bgTime-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#bgTime-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#bgTime-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#bgTime-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#bgTime-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#bgTime-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#bgTime-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#bgTime-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#bgTime-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#bgTime-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#bgTime-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#bgTime-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#bgTime-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#bgTime-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#bgTime-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#bgTime-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#bgTime-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#bgTime-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#bgTime-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#bgTime-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#bgTime-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#bgTime-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#bgTime-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#bgTime-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#bgTime-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#bgTime-menu li:nth-child(63) >  div{ background-color: #555555; }
+#bgTime-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#bgTime-menu li:nth-child(64) >  div{ background-color: #000000; }
+#bgTime-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color Time*/
+/*Inchworm*/
+#tcTime-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#tcTime-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#tcTime-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#tcTime-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#tcTime-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#tcTime-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#tcTime-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#tcTime-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#tcTime-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#tcTime-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#tcTime-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#tcTime-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#tcTime-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#tcTime-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#tcTime-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#tcTime-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#tcTime-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#tcTime-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#tcTime-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#tcTime-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#tcTime-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#tcTime-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#tcTime-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#tcTime-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#tcTime-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#tcTime-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#tcTime-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#tcTime-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#tcTime-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#tcTime-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#tcTime-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#tcTime-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#tcTime-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#tcTime-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#tcTime-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#tcTime-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#tcTime-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#tcTime-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#tcTime-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#tcTime-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#tcTime-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#tcTime-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#tcTime-menu li:nth-child(22) >  div{ background-color: #555500; }
+#tcTime-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#tcTime-menu li:nth-child(23) >  div{ background-color: #005500; }
+#tcTime-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#tcTime-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#tcTime-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#tcTime-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#tcTime-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#tcTime-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#tcTime-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#tcTime-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#tcTime-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#tcTime-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#tcTime-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#tcTime-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#tcTime-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#tcTime-menu li:nth-child(30) >  div{ background-color: #005555; }
+#tcTime-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#tcTime-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#tcTime-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#tcTime-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#tcTime-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#tcTime-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#tcTime-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#tcTime-menu li:nth-child(34) >  div{ background-color: #550000; }
+#tcTime-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#tcTime-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#tcTime-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#tcTime-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#tcTime-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#tcTime-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#tcTime-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#tcTime-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#tcTime-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#tcTime-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#tcTime-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#tcTime-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#tcTime-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#tcTime-menu li:nth-child(41) >  div{ background-color: #000055; }
+#tcTime-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#tcTime-menu li:nth-child(42) >  div{ background-color: #550055; }
+#tcTime-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#tcTime-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#tcTime-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#tcTime-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#tcTime-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#tcTime-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#tcTime-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#tcTime-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#tcTime-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#tcTime-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#tcTime-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#tcTime-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#tcTime-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#tcTime-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#tcTime-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#tcTime-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#tcTime-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#tcTime-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#tcTime-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#tcTime-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#tcTime-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#tcTime-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#tcTime-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#tcTime-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#tcTime-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#tcTime-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#tcTime-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#tcTime-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#tcTime-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#tcTime-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#tcTime-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#tcTime-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#tcTime-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#tcTime-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#tcTime-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#tcTime-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#tcTime-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#tcTime-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#tcTime-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#tcTime-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#tcTime-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#tcTime-menu li:nth-child(63) >  div{ background-color: #555555; }
+#tcTime-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#tcTime-menu li:nth-child(64) >  div{ background-color: #000000; }
+#tcTime-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+
+/*Background Color Window Background*/
+/*Inchworm*/
+#bgWbg-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#bgWbg-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#bgWbg-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#bgWbg-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#bgWbg-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#bgWbg-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#bgWbg-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#bgWbg-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#bgWbg-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#bgWbg-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#bgWbg-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#bgWbg-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#bgWbg-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#bgWbg-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#bgWbg-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#bgWbg-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#bgWbg-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#bgWbg-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#bgWbg-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#bgWbg-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#bgWbg-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#bgWbg-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#bgWbg-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#bgWbg-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#bgWbg-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#bgWbg-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#bgWbg-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#bgWbg-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#bgWbg-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#bgWbg-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#bgWbg-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#bgWbg-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#bgWbg-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#bgWbg-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#bgWbg-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#bgWbg-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#bgWbg-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#bgWbg-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#bgWbg-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#bgWbg-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#bgWbg-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#bgWbg-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#bgWbg-menu li:nth-child(22) >  div{ background-color: #555500; }
+#bgWbg-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#bgWbg-menu li:nth-child(23) >  div{ background-color: #005500; }
+#bgWbg-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#bgWbg-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#bgWbg-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#bgWbg-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#bgWbg-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#bgWbg-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#bgWbg-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#bgWbg-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#bgWbg-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#bgWbg-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#bgWbg-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#bgWbg-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#bgWbg-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#bgWbg-menu li:nth-child(30) >  div{ background-color: #005555; }
+#bgWbg-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#bgWbg-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#bgWbg-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#bgWbg-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#bgWbg-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#bgWbg-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#bgWbg-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#bgWbg-menu li:nth-child(34) >  div{ background-color: #550000; }
+#bgWbg-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#bgWbg-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#bgWbg-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#bgWbg-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#bgWbg-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#bgWbg-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#bgWbg-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#bgWbg-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#bgWbg-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#bgWbg-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#bgWbg-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#bgWbg-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#bgWbg-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#bgWbg-menu li:nth-child(41) >  div{ background-color: #000055; }
+#bgWbg-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#bgWbg-menu li:nth-child(42) >  div{ background-color: #550055; }
+#bgWbg-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#bgWbg-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#bgWbg-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#bgWbg-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#bgWbg-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#bgWbg-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#bgWbg-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#bgWbg-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#bgWbg-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#bgWbg-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#bgWbg-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#bgWbg-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#bgWbg-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#bgWbg-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#bgWbg-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#bgWbg-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#bgWbg-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#bgWbg-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#bgWbg-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#bgWbg-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#bgWbg-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#bgWbg-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#bgWbg-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#bgWbg-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#bgWbg-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#bgWbg-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#bgWbg-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#bgWbg-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#bgWbg-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#bgWbg-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#bgWbg-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#bgWbg-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#bgWbg-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#bgWbg-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#bgWbg-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#bgWbg-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#bgWbg-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#bgWbg-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#bgWbg-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#bgWbg-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#bgWbg-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#bgWbg-menu li:nth-child(63) >  div{ background-color: #555555; }
+#bgWbg-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#bgWbg-menu li:nth-child(64) >  div{ background-color: #000000; }
+#bgWbg-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color Window Background*/
+/*Inchworm*/
+#tcWbg-menu li:nth-child(1) >  div{ background-color: #AAFF55; }
+#tcWbg-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Bright Green*/
+#tcWbg-menu li:nth-child(2) >  div{ background-color: #55FF00; }
+#tcWbg-menu li:nth-child(2) >  div > div > a { color: #000000 !important; }
+/*Spring Bud*/
+#tcWbg-menu li:nth-child(3) >  div{ background-color: #AAFF00; }
+#tcWbg-menu li:nth-child(3) >  div > div > a { color: #000000 !important; }
+/*Green*/
+#tcWbg-menu li:nth-child(4) >  div{ background-color: #00FF00; }
+#tcWbg-menu li:nth-child(4) >  div > div > a { color: #000000 !important; }
+/*Mint Green*/
+#tcWbg-menu li:nth-child(5) >  div{ background-color: #AAFFAA; }
+#tcWbg-menu li:nth-child(5) >  div > div > a { color: #000000 !important; }
+/*Screamin' Green*/
+#tcWbg-menu li:nth-child(6) >  div{ background-color: #55FF55; }
+#tcWbg-menu li:nth-child(6) >  div > div > a { color: #000000 !important; }
+/*Malachite*/
+#tcWbg-menu li:nth-child(7) >  div{ background-color: #00FF55; }
+#tcWbg-menu li:nth-child(7) >  div > div > a { color: #000000 !important; }
+/*Islamic Green*/
+#tcWbg-menu li:nth-child(8) >  div{ background-color: #00FF00; }
+#tcWbg-menu li:nth-child(8) >  div > div > a { color: #000000 !important; }
+/*Kelly Green*/
+#tcWbg-menu li:nth-child(9) >  div{ background-color: #55AA00; }
+#tcWbg-menu li:nth-child(9) >  div > div > a { color: #FFFFFF !important; }
+/*Brass*/
+#tcWbg-menu li:nth-child(10) >  div{ background-color: #AAAA55; }
+#tcWbg-menu li:nth-child(10) >  div > div > a { color: #FFFFFF !important; }
+/*Limerick*/
+#tcWbg-menu li:nth-child(11) >  div{ background-color: #AAAA00; }
+#tcWbg-menu li:nth-child(11) >  div > div > a { color: #FFFFFF !important; }
+/*Yellow*/
+#tcWbg-menu li:nth-child(12) >  div{ background-color: #FFFF00; }
+#tcWbg-menu li:nth-child(12) >  div > div > a { color: #000000 !important; }
+/*Icterine*/
+#tcWbg-menu li:nth-child(13) >  div{ background-color: #FFFF55; }
+#tcWbg-menu li:nth-child(13) >  div > div > a { color: #000000 !important; }
+/*Pastel Yellow*/
+#tcWbg-menu li:nth-child(14) >  div{ background-color: #FFFFAA; }
+#tcWbg-menu li:nth-child(14) >  div > div > a { color: #000000 !important; }
+/*Rajah*/
+#tcWbg-menu li:nth-child(15) >  div{ background-color: #FFAA55; }
+#tcWbg-menu li:nth-child(15) >  div > div > a { color: #000000 !important; }
+/*Chrome Yellow*/
+#tcWbg-menu li:nth-child(16) >  div{ background-color: #FFAA00; }
+#tcWbg-menu li:nth-child(16) >  div > div > a { color: #000000 !important; }
+/*Orange*/
+#tcWbg-menu li:nth-child(17) >  div{ background-color: #FF5500; }
+#tcWbg-menu li:nth-child(17) >  div > div > a { color: #000000 !important; }
+/*Melon*/
+#tcWbg-menu li:nth-child(18) >  div{ background-color: #FFAAAA; }
+#tcWbg-menu li:nth-child(18) >  div > div > a { color: #000000 !important; }
+/*Sunset Orange*/
+#tcWbg-menu li:nth-child(19) >  div{ background-color: #FF5555; }
+#tcWbg-menu li:nth-child(19) >  div > div > a { color: #000000 !important; }
+/*Red*/
+#tcWbg-menu li:nth-child(20) >  div{ background-color: #FF0000; }
+#tcWbg-menu li:nth-child(20) >  div > div > a { color: #000000 !important; }
+/*Windsor Tan*/
+#tcWbg-menu li:nth-child(21) >  div{ background-color: #AA5500; }
+#tcWbg-menu li:nth-child(21) >  div > div > a { color: #FFFFFF !important; }
+/*Army Green*/
+#tcWbg-menu li:nth-child(22) >  div{ background-color: #555500; }
+#tcWbg-menu li:nth-child(22) >  div > div > a { color: #FFFFFF !important; }
+/*Dark Green (X11)*/
+#tcWbg-menu li:nth-child(23) >  div{ background-color: #005500; }
+#tcWbg-menu li:nth-child(23) >  div > div > a { color: #FFFFFF !important; }
+/*May Green*/
+#tcWbg-menu li:nth-child(24) >  div{ background-color: #55AA55; }
+#tcWbg-menu li:nth-child(24) >  div > div > a { color: #000000 !important; }
+/*Jaeger Green*/
+#tcWbg-menu li:nth-child(25) >  div{ background-color: #00AA55; }
+#tcWbg-menu li:nth-child(25) >  div > div > a { color: #000000 !important; }
+/*Medium Aquamarine*/
+#tcWbg-menu li:nth-child(26) >  div{ background-color: #55FFAA; }
+#tcWbg-menu li:nth-child(26) >  div > div > a { color: #000000 !important; }
+/*Medium Spring Green*/
+#tcWbg-menu li:nth-child(27) >  div{ background-color: #00FFAA; }
+#tcWbg-menu li:nth-child(27) >  div > div > a { color: #000000 !important; }
+/*Tiffany Blue*/
+#tcWbg-menu li:nth-child(28) >  div{ background-color: #00AAAA; }
+#tcWbg-menu li:nth-child(28) >  div > div > a { color: #000000 !important; }
+/*Cadet Blue*/
+#tcWbg-menu li:nth-child(29) >  div{ background-color: #55AAAA; }
+#tcWbg-menu li:nth-child(29) >  div > div > a { color: #000000 !important; }
+/*Midnight Green (Eagle Green)*/
+#tcWbg-menu li:nth-child(30) >  div{ background-color: #005555; }
+#tcWbg-menu li:nth-child(30) >  div > div > a { color: #FFFFFF !important; }
+/*Rose Vale*/
+#tcWbg-menu li:nth-child(31) >  div{ background-color: #AA5555; }
+#tcWbg-menu li:nth-child(31) >  div > div > a { color: #000000 !important; }
+/*Folly*/
+#tcWbg-menu li:nth-child(32) >  div{ background-color: #FF0055; }
+#tcWbg-menu li:nth-child(32) >  div > div > a { color: #000000 !important; }
+/*Dark Candy Apple Red*/
+#tcWbg-menu li:nth-child(33) >  div{ background-color: #AA0000; }
+#tcWbg-menu li:nth-child(33) >  div > div > a { color: #FFFFFF !important; }
+/*Bulgarian Rose*/
+#tcWbg-menu li:nth-child(34) >  div{ background-color: #550000; }
+#tcWbg-menu li:nth-child(34) >  div > div > a { color: #FFFFFF !important; }
+/*Cobalt Blue*/
+#tcWbg-menu li:nth-child(35) >  div{ background-color: #0055AA; }
+#tcWbg-menu li:nth-child(35) >  div > div > a { color: #000000 !important; }
+/*Cyan*/
+#tcWbg-menu li:nth-child(36) >  div{ background-color: #00FFFF; }
+#tcWbg-menu li:nth-child(36) >  div > div > a { color: #000000 !important; }
+/*Electric Blue*/
+#tcWbg-menu li:nth-child(37) >  div{ background-color: #55FFFF; }
+#tcWbg-menu li:nth-child(37) >  div > div > a { color: #000000 !important; }
+/*Celeste*/
+#tcWbg-menu li:nth-child(38) >  div{ background-color: #AAFFFF; }
+#tcWbg-menu li:nth-child(38) >  div > div > a { color: #000000 !important; }
+/*Vivid Cerulean*/
+#tcWbg-menu li:nth-child(39) >  div{ background-color: #00AAFF; }
+#tcWbg-menu li:nth-child(39) >  div > div > a { color: #FFFFFF !important; }
+/*Duke Blue*/
+#tcWbg-menu li:nth-child(40) >  div{ background-color: #0000AA; }
+#tcWbg-menu li:nth-child(40) >  div > div > a { color: #FFFFFF !important; }
+/*Oxford Blue*/
+#tcWbg-menu li:nth-child(41) >  div{ background-color: #000055; }
+#tcWbg-menu li:nth-child(41) >  div > div > a { color: #FFFFFF !important; }
+/*Imperial Purple*/
+#tcWbg-menu li:nth-child(42) >  div{ background-color: #550055; }
+#tcWbg-menu li:nth-child(42) >  div > div > a { color: #FFFFFF !important; }
+/*Jazzberry Jam*/
+#tcWbg-menu li:nth-child(43) >  div{ background-color: #AA0055; }
+#tcWbg-menu li:nth-child(43) >  div > div > a { color: #FFFFFF !important; }
+/*Fashion Magenta*/
+#tcWbg-menu li:nth-child(44) >  div{ background-color: #FF00AA; }
+#tcWbg-menu li:nth-child(44) >  div > div > a { color: #FFFFFF !important; }
+/*Brilliant Rose*/
+#tcWbg-menu li:nth-child(45) >  div{ background-color: #FF55AA; }
+#tcWbg-menu li:nth-child(45) >  div > div > a { color: #FFFFFF !important; }
+/*Magenta*/
+#tcWbg-menu li:nth-child(46) >  div{ background-color: #FF00FF; }
+#tcWbg-menu li:nth-child(46) >  div > div > a { color: #FFFFFF !important; }
+/*Purple*/
+#tcWbg-menu li:nth-child(47) >  div{ background-color: #AA00AA; }
+#tcWbg-menu li:nth-child(47) >  div > div > a { color: #FFFFFF !important; }
+/*Indigo (Web)*/
+#tcWbg-menu li:nth-child(48) >  div{ background-color: #5500AA; }
+#tcWbg-menu li:nth-child(48) >  div > div > a { color: #FFFFFF !important; }
+/*Electric Ultramarine*/
+#tcWbg-menu li:nth-child(49) >  div{ background-color: #5500FF; }
+#tcWbg-menu li:nth-child(49) >  div > div > a { color: #FFFFFF !important; }
+/*Blue*/
+#tcWbg-menu li:nth-child(50) >  div{ background-color: #0000FF; }
+#tcWbg-menu li:nth-child(50) >  div > div > a { color: #FFFFFF !important; }
+/*Picton Blue*/
+#tcWbg-menu li:nth-child(51) >  div{ background-color: #55AAFF; }
+#tcWbg-menu li:nth-child(51) >  div > div > a { color: #000000 !important; }
+/*Blue Moon*/
+#tcWbg-menu li:nth-child(52) >  div{ background-color: #0055FF; }
+#tcWbg-menu li:nth-child(52) >  div > div > a { color: #FFFFFF !important; }
+/*Very Light Blue*/
+#tcWbg-menu li:nth-child(53) >  div{ background-color: #5555FF; }
+#tcWbg-menu li:nth-child(53) >  div > div > a { color: #FFFFFF !important; }
+/*Liberty*/
+#tcWbg-menu li:nth-child(54) >  div{ background-color: #5555AA; }
+#tcWbg-menu li:nth-child(54) >  div > div > a { color: #FFFFFF !important; }
+/*Vivid Violet*/
+#tcWbg-menu li:nth-child(55) >  div{ background-color: #AA00FF; }
+#tcWbg-menu li:nth-child(55) >  div > div > a { color: #FFFFFF !important; }
+/*Purpureus*/
+#tcWbg-menu li:nth-child(56) >  div{ background-color: #AA55AA; }
+#tcWbg-menu li:nth-child(56) >  div > div > a { color: #FFFFFF !important; }
+/*Shocking Pink (Crayola)*/
+#tcWbg-menu li:nth-child(57) >  div{ background-color: #FF55FF; }
+#tcWbg-menu li:nth-child(57) >  div > div > a { color: #FFFFFF !important; }
+/*Rich Brilliant Lavender*/
+#tcWbg-menu li:nth-child(58) >  div{ background-color: #FFAAFF; }
+#tcWbg-menu li:nth-child(58) >  div > div > a { color: #000000 !important; }
+/*Baby Blue Eyes*/
+#tcWbg-menu li:nth-child(59) >  div{ background-color: #AAAAFF; }
+#tcWbg-menu li:nth-child(59) >  div > div > a { color: #000000 !important; }
+/*Lavender Indigo*/
+#tcWbg-menu li:nth-child(60) >  div{ background-color: #AA55FF; }
+#tcWbg-menu li:nth-child(60) >  div > div > a { color: #000000 !important; }
+/*White*/
+#tcWbg-menu li:nth-child(61) >  div{ background-color: #FFFFFF; }
+#tcWbg-menu li:nth-child(61) >  div > div > a { color: #000000 !important; }
+/*Light Gray*/
+#tcWbg-menu li:nth-child(62) >  div{ background-color: #AAAAAA; }
+#tcWbg-menu li:nth-child(62) >  div > div > a { color: #000000 !important; }
+/*Dark Gray*/
+#tcWbg-menu li:nth-child(63) >  div{ background-color: #555555; }
+#tcWbg-menu li:nth-child(63) >  div > div > a { color: #FFFFFF !important; }
+/*Black*/
+#tcWbg-menu li:nth-child(64) >  div{ background-color: #000000; }
+#tcWbg-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
