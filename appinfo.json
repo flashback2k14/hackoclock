@@ -1,7 +1,28 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_BG_BEER": 2,
+        "KEY_BG_HACK": 3,
+        "KEY_BG_OCLOCK": 4,
+        "KEY_BG_PBL_BEER": 11,
+        "KEY_BG_PBL_HACK": 12,
+        "KEY_BG_PBL_OCLOCK": 13,
+        "KEY_BG_PBL_TIME": 14,
+        "KEY_BG_PBL_WINBG": 15,
+        "KEY_BG_TIME": 5,
+        "KEY_BG_WINBG": 6,
+        "KEY_CUSTOM_NEEDED_TAPS": 1,
+        "KEY_SHOW_ALWAYS_TIME": 0,
+        "KEY_TC_BEER": 7,
+        "KEY_TC_HACK": 8,
+        "KEY_TC_OCLOCK": 9,
+        "KEY_TC_PBL_BEER": 16,
+        "KEY_TC_PBL_HACK": 17,
+        "KEY_TC_PBL_OCLOCK": 18,
+        "KEY_TC_PBL_TIME": 19,
+        "KEY_TC_TIME": 10
+    },
     "capabilities": [
-        ""
+        "configurable"
     ],
     "companyName": "yeahdev@gmail.com",
     "longName": "Hack o'clock",
