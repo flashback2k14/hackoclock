@@ -167,6 +167,9 @@ static GColor getColor(char *colorName) {
 	#endif
 }
 
+/**
+ * Set Color to Text or Background
+ */
 static void setUserColor(Tuple *t, TextLayer *layer, bool isBackground) {
 	static char colorNameFromTuple[30];
 	static GColor userColor;
@@ -198,28 +201,19 @@ static void perform_customisation(Tuple *t) {
 		
 		#ifdef PBL_COLOR
 			case KEY_BG_BEER: 
-				/*strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_beer_layer, userColor);*/
 				setUserColor(t, s_beer_layer, true);
 				break;
 
 			case KEY_BG_HACK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_hack_layer, userColor);
+				setUserColor(t, s_hack_layer, true);
 				break;
 
 			case KEY_BG_OCLOCK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_oclock_layer, userColor);
+				setUserColor(t, s_oclock_layer, true);
 				break;
 
 			case KEY_BG_TIME: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_time_layer, userColor);
+				setUserColor(t, s_time_layer, true);
 				break;
 
 			case KEY_BG_WINBG: 
@@ -229,82 +223,58 @@ static void perform_customisation(Tuple *t) {
 				break;
 
 			case KEY_TC_BEER: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_beer_layer, userColor);
+				setUserColor(t, s_beer_layer, false);
 				break;
 
 			case KEY_TC_HACK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_hack_layer, userColor);
+				setUserColor(t, s_hack_layer, false);
 				break;
 
 			case KEY_TC_OCLOCK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_oclock_layer, userColor);
+				setUserColor(t, s_oclock_layer, false);
 				break;
 
 			case KEY_TC_TIME: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_time_layer, userColor);
+				setUserColor(t, s_time_layer, false);
 				break;
 		#else
 			case KEY_BG_PBL_BEER: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_beer_layer, userColor);
+				setUserColor(t, s_beer_layer, true);
 				break;
 
 			case KEY_BG_PBL_HACK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_hack_layer, userColor);
+				setUserColor(t, s_hack_layer, true);
 				break;
 
 			case KEY_BG_PBL_OCLOCK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_oclock_layer, userColor);
+				setUserColor(t, s_oclock_layer, true);
 				break;
 
 			case KEY_BG_PBL_TIME: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_background_color(s_time_layer, userColor);
+				setUserColor(t, s_time_layer, true);
 				break;
 
-			case KEY_BG_PBL_WINBG: 
+			case KEY_BG_WINBG: 
 				strcpy(colorNameFromTuple, t->value->cstring);
 				userColor = getColor(colorNameFromTuple);		
 				window_set_background_color(s_window, userColor);
 				break;
 
 			case KEY_TC_PBL_BEER: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_beer_layer, userColor);
+				setUserColor(t, s_beer_layer, false);
 				break;
 
 			case KEY_TC_PBL_HACK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_hack_layer, userColor);
+				setUserColor(t, s_hack_layer, false);
 				break;
 
 			case KEY_TC_PBL_OCLOCK: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_oclock_layer, userColor);
+				setUserColor(t, s_oclock_layer, false);
 				break;
 
 			case KEY_TC_PBL_TIME: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				text_layer_set_text_color(s_time_layer, userColor);
-				break;		
+				setUserColor(t, s_time_layer, false);
+				break;
 		#endif
 		
 		default:
