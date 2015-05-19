@@ -1933,3 +1933,61 @@
 /*Black*/
 #tcWbg-menu li:nth-child(64) >  div{ background-color: #000000; }
 #tcWbg-menu li:nth-child(64) >  div > div > a { color: #FFFFFF !important; }
+
+/*Pebble / Pebble Steel*/
+/*Background Color HACK*/
+/*White*/
+#bgPblHack-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#bgPblHack-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#bgPblHack-menu li:nth-child(2) >  div{ background-color: #000000; }
+#bgPblHack-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color Time*/
+/*White*/
+#tcPblHack-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#tcPblHack-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#tcPblHack-menu li:nth-child(2) >  div{ background-color: #000000; }
+#tcPblHack-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Background Color BEER*/
+/*White*/
+#bgPblBeer-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#bgPblBeer-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#bgPblBeer-menu li:nth-child(2) >  div{ background-color: #000000; }
+#bgPblBeer-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Background Color OCLOCK*/
+/*White*/
+#bgPblOclock-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#bgPblOclock-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#bgPblOclock-menu li:nth-child(2) >  div{ background-color: #000000; }
+#bgPblOclock-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color Time*/
+/*White*/
+#tcPblOclock-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#tcPblOclock-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#tcPblOclock-menu li:nth-child(2) >  div{ background-color: #000000; }
+#tcPblOclock-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Background Color TIME*/
+/*White*/
+#bgPblTime-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#bgPblTime-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#bgPblTime-menu li:nth-child(2) >  div{ background-color: #000000; }
+#bgPblTime-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Text Color Time*/
+/*White*/
+#tcPblTime-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#tcPblTime-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#tcPblTime-menu li:nth-child(2) >  div{ background-color: #000000; }
+#tcPblTime-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }
+/*Background Color WINDOW BG*/
+/*White*/
+#bgPblWbg-menu li:nth-child(1) >  div{ background-color: #FFFFFF; }
+#bgPblWbg-menu li:nth-child(1) >  div > div > a { color: #000000 !important; }
+/*Black*/
+#bgPblWbg-menu li:nth-child(2) >  div{ background-color: #000000; }
+#bgPblWbg-menu li:nth-child(2) >  div > div > a { color: #FFFFFF !important; }

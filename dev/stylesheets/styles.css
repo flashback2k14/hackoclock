@@ -41,7 +41,7 @@
 .main_content_wrap {
   background: #f2f2f2;
   border-top: 1px solid #111;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
 }
 .main_content {
   margin: 20px;
@@ -59,6 +59,7 @@ footer {
     bottom:0;
     left:0;
     right:0;
+    margin-top: 10px;
     margin-bottom:0;
     padding: 10px;
 }

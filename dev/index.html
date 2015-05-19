@@ -24,7 +24,7 @@
               <form>
                   <fieldset data-role="controlgroup">
                       <legend><b>Choose your Pebble Watch:</b></legend>
-                      <input type="radio" class="radio" name="radio-choice-v-2" id="rbPebble" data-theme="a" value="pebble" checked="checked" />
+                      <input type="radio" class="radio" name="radio-choice-v-2" id="rbPebble" data-theme="a" value="pebble" />
                       <label for="rbPebble">Pebble / Pebble Steel</label>
                       <input type="radio" class="radio" name="radio-choice-v-2" id="rbPebbleTime" data-theme="a" value="pebbleTime" />
                       <label for="rbPebbleTime">Pebble Time</label>
@@ -33,11 +33,83 @@
           </div>
           <!-- Color Options for Pebble / Pebble Steel -->
           <div id="colorChoosePebbleContainer">
-              <label for="selectInvert"><b>Invert Watchface Color:</b></label>
-              <select name="selectInvert" id="selectInvert" data-theme="a" data-role="slider">
-                  <option value="off" selected>Off</option>
-                  <option value="on">On</option>
-              </select>
+              <!-- Color Options HACK -->
+              <fieldset class="ui-field-contain">
+                  <label for="bgPblHack"><b>Select Background Color for HACK:</b></label>
+                  <select name="" id="bgPblHack" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite">White</option>
+                      <option value="GColorBlack" selected>Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <fieldset class="ui-field-contain">
+                  <label for="tcPblHack"><b>Select Text Color for HACK:</b></label>
+                  <select name="" id="tcPblHack" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite" selected>White</option>
+                      <option value="GColorBlack">Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <!-- Color Options BEER -->
+              <fieldset class="ui-field-contain">
+                  <label for="bgPblBeer"><b>Select Background Color for BEER:</b></label>
+                  <select name="" id="bgPblBeer" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite">White</option>
+                      <option value="GColorBlack" selected>Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <fieldset class="ui-field-contain">
+                  <label for="tcPblBeer"><b>Select Text Color for BEER:</b></label>
+                  <select name="" id="tcPblBeer" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite" selected>White</option>
+                      <option value="GColorBlack">Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <!-- Color Options o'Clock -->
+              <fieldset class="ui-field-contain">
+                  <label for="bgPblOclock"><b>Select Background Color for o'clock:</b></label>
+                  <select name="" id="bgPblOclock" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite">White</option>
+                      <option value="GColorBlack" selected>Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <fieldset class="ui-field-contain">
+                  <label for="tcPblOclock"><b>Select Text Color for o'clock:</b></label>
+                  <select name="" id="tcPblOclock" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite" selected>White</option>
+                      <option value="GColorBlack">Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <!-- Color Options Time -->
+              <fieldset class="ui-field-contain">
+                  <label for="bgPblTime"><b>Select Background Color for Time:</b></label>
+                  <select name="" id="bgPblTime" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite">White</option>
+                      <option value="GColorBlack" selected>Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <fieldset class="ui-field-contain">
+                  <label for="tcPblTime"><b>Select Text Color for Time:</b></label>
+                  <select name="" id="tcPblTime" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite" selected>White</option>
+                      <option value="GColorBlack">Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
+              <!-- Color Options Window Background -->
+              <fieldset class="ui-field-contain">
+                  <label for="bgPblWbg"><b>Select Background Color for Window Background:</b></label>
+                  <select name="" id="bgPblWbg" data-native-menu="false" data-theme="a" data-overlay-theme="a">
+                      <option value="GColorWhite">White</option>
+                      <option value="GColorBlack" selected>Black</option>
+                      <option value="GColorClear">Clear</option>
+                  </select>
+              </fieldset>
           </div>
           <!-- Color Options for Pebble Time -->
           <div id="colorChoosePebbleTimeContainer">
@@ -686,7 +758,7 @@
               </select>
 
               <label for="inputNeededTaps"><b>Enter number for needed Shakes <br/> to show the Time:</b></label>
-              <input type="text" name="inputNeededTaps" id="inputNeededTaps" placeholder="4" />
+              <input type="number" name="inputNeededTaps" id="inputNeededTaps" placeholder="4" min="0" />
           </div>
           <!-- BUTTONS-->
           <div class="ui-body ui-body-b">
@@ -710,7 +782,7 @@
       function saveOptions() {
         var options = {};
         //Add all textual values
-        $('textarea, select, [type="hidden"], [type="password"], [type="text"]').each(function(){options[$(this).attr('id')] = $(this).val();});
+        $('textarea, select, [type="hidden"], [type="password"], [type="text"], [type="number"]').each(function(){options[$(this).attr('id')] = $(this).val();});
         //Add all checkbox type values
         $('[type="radio"], [type="checkbox"]').each(function(){options[$(this).attr('id')] = $(this).is(':checked');});
         return options;
@@ -719,6 +791,7 @@
       // Document ready
       $().ready(function() {
           // Show Hide Color Choose Container
+          $('#colorChoosePebbleContainer').hide();
           $('#colorChoosePebbleTimeContainer').hide();
           $(".radio").change(function () {
               if (this.value == "pebble") {
