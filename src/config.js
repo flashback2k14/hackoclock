@@ -1,3 +1,8 @@
+/**
+ * http://www.willpeavy.com/minifier/
+ * http://jscompress.com/
+ * http://cssminifier.com/
+ */
 var isPebbleTime;
 var options = {};
 var customData = {};
@@ -6,8 +11,8 @@ Pebble.addEventListener("ready", function(e) {
 	console.log("PebbleKit JS is ready!");
 	if (Pebble.getActiveWatchInfo) {
 		var info = Pebble.getActiveWatchInfo();
-		//console.log("DEBUG: Pebble Model: " + info.model);
 		isPebbleTime = (info.model.indexOf("basalt") != -1 || info.model.indexOf("time") != -1 ) ? true : false;
+		//console.log("DEBUG: Pebble Model: " + info.model);
 		//console.log("DEBUG: isPebbleTime: " + isPebbleTime);
 	} else {
 		console.log("Pebble model not avialable!");

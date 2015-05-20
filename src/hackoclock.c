@@ -40,7 +40,7 @@ bool isTimeLayerShown = 1; //change logic to standard value 0
 bool isBeerOclock = 1;		 //change logic to standard value 0
 
 /**
- * Initialisation TextLayer
+ * initialisation TextLayer
  */
 static TextLayer* init_text_layer(GRect location, const char *text, GColor textColor, GColor backgroundColor, const char *textFont, GTextAlignment alignment, bool isHidden) {
   TextLayer *layer = text_layer_create(location);
@@ -54,7 +54,7 @@ static TextLayer* init_text_layer(GRect location, const char *text, GColor textC
 }
 
 /**
- * Change TextLayer
+ * change TextLayer
  */
 static void change_text_layer_to(TextLayer *layer, GRect location, bool isHidden) {
   layer_set_frame((Layer *) layer, location);
@@ -168,7 +168,7 @@ static GColor getColor(char *colorName) {
 }
 
 /**
- * Set Color to Text or Background
+ * set Color to Text or Background
  */
 static void setUserColor(Tuple *t, TextLayer *layer, bool isBackground) {
 	static char colorNameFromTuple[30];
@@ -176,9 +176,21 @@ static void setUserColor(Tuple *t, TextLayer *layer, bool isBackground) {
 	
 	strcpy(colorNameFromTuple, t->value->cstring);
 	userColor = getColor(colorNameFromTuple);
-	
+		
 	if (isBackground) text_layer_set_background_color(layer, userColor);
 	else text_layer_set_text_color(layer, userColor);
+}
+
+/**
+ * set Window Background Color
+ */
+static void setUserWindowBGColor(Tuple *t, Window *window) {
+	static char colorNameFromTuple[30];
+	static GColor userColor;	
+	
+	strcpy(colorNameFromTuple, t->value->cstring);
+	userColor = getColor(colorNameFromTuple);		
+	window_set_background_color(window, userColor);
 }
 
 /**
@@ -186,12 +198,9 @@ static void setUserColor(Tuple *t, TextLayer *layer, bool isBackground) {
  */
 static void perform_customisation(Tuple *t) {
 	
-	static char colorNameFromTuple[30];
-	static GColor userColor;
-	
 	switch(t->key) {
 		case KEY_SHOW_ALWAYS_TIME: 
-			if (strcmp(t->value->cstring, "on") == 0) {isAlwaysShownTimeActive = 1; show_time_layer();}
+			if (strcmp(t->value->cstring, "on") == 0) { isAlwaysShownTimeActive = 1; show_time_layer(); }
 			else isAlwaysShownTimeActive = 0;
 			break;
 		
@@ -217,9 +226,7 @@ static void perform_customisation(Tuple *t) {
 				break;
 
 			case KEY_BG_WINBG: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				window_set_background_color(s_window, userColor);
+				setUserWindowBGColor(t, s_window);		
 				break;
 
 			case KEY_TC_BEER: 
@@ -255,9 +262,7 @@ static void perform_customisation(Tuple *t) {
 				break;
 
 			case KEY_BG_WINBG: 
-				strcpy(colorNameFromTuple, t->value->cstring);
-				userColor = getColor(colorNameFromTuple);		
-				window_set_background_color(s_window, userColor);
+				setUserWindowBGColor(t, s_window);
 				break;
 
 			case KEY_TC_PBL_BEER: 
@@ -283,7 +288,7 @@ static void perform_customisation(Tuple *t) {
 }
 
 /**
- * Handle Customisation AppMessage
+ * handle customisation AppMessage
  */
 static void in_recv_handler(DictionaryIterator *iterator, void *context) {
 	Tuple *t = dict_read_first(iterator);
@@ -295,130 +300,58 @@ static void in_recv_handler(DictionaryIterator *iterator, void *context) {
 }
 
 /**
- * Handle Accelerometer
+ * handle tap count & show / hide time layer
+ */
+static void handleTimeLayerState() {
+	tapCounter = tapCounter + 1;
+	
+	if (isAlwaysShownTimeActive == 1) {
+		show_time_layer();
+		tapCounter = 0;
+	} else {
+		if (tapCounter == NEEDED_TAPS) {
+			if (isTimeLayerShown == 0) {
+				hide_time_layer();
+				tapCounter = 0;
+				isTimeLayerShown = 1;
+			} else {
+				show_time_layer();
+				tapCounter = 0;
+				isTimeLayerShown = 0;
+			}				
+		}
+	}
+}
+
+/**
+ * handle accelerometer
  */
 static void tap_handler(AccelAxisType axis, int32_t direction) {
 	switch (axis) {
   case ACCEL_AXIS_X:
     if (direction > 0) {
-			tapCounter = tapCounter + 1;
-			if (isAlwaysShownTimeActive == 1) {
-				show_time_layer();
-				tapCounter = 0;
-			} else {
-				if (tapCounter == NEEDED_TAPS) {
-					if (isTimeLayerShown == 0) {
-						hide_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 1;
-					} else {
-						show_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 0;
-					}				
-				}
-			}
+			handleTimeLayerState();
       //APP_LOG(APP_LOG_LEVEL_INFO, "X axis positive. %d", tapCounter);
     } else {
-			tapCounter = tapCounter + 1;
-			if (isAlwaysShownTimeActive == 1) {
-				show_time_layer();
-				tapCounter = 0;
-			} else {
-				if (tapCounter == NEEDED_TAPS) {
-					if (isTimeLayerShown == 0) {
-						hide_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 1;
-					} else {
-						show_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 0;
-					}				
-				}
-			}
+			handleTimeLayerState();
       //APP_LOG(APP_LOG_LEVEL_INFO, "X axis negative. %d", tapCounter);
     }
     break;
   case ACCEL_AXIS_Y:
     if (direction > 0) {
-			tapCounter = tapCounter + 1;
-			if (isAlwaysShownTimeActive == 1) {
-				show_time_layer();
-				tapCounter = 0;
-			} else {
-				if (tapCounter == NEEDED_TAPS) {
-					if (isTimeLayerShown == 0) {
-						hide_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 1;
-					} else {
-						show_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 0;
-					}				
-				}
-			}
+			handleTimeLayerState();
       //APP_LOG(APP_LOG_LEVEL_INFO, "Y axis positive. %d", tapCounter);
     } else {
-			tapCounter = tapCounter + 1;
-			if (isAlwaysShownTimeActive == 1) {
-				show_time_layer();
-				tapCounter = 0;
-			} else {
-				if (tapCounter == NEEDED_TAPS) {
-					if (isTimeLayerShown == 0) {
-						hide_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 1;
-					} else {
-						show_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 0;
-					}				
-				}
-			}
+			handleTimeLayerState();
       //APP_LOG(APP_LOG_LEVEL_INFO, "Y axis negative. %d", tapCounter);
     }
     break;
   case ACCEL_AXIS_Z:
     if (direction > 0) {
-			tapCounter = tapCounter + 1;
-			if (isAlwaysShownTimeActive == 1) {
-				show_time_layer();
-				tapCounter = 0;
-			} else {
-				if (tapCounter == NEEDED_TAPS) {
-					if (isTimeLayerShown == 0) {
-						hide_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 1;
-					} else {
-						show_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 0;
-					}				
-				}
-			}
+			handleTimeLayerState();
       //APP_LOG(APP_LOG_LEVEL_INFO, "Z axis positive. %d", tapCounter);
     } else {
-			tapCounter = tapCounter + 1;
-			if (isAlwaysShownTimeActive == 1) {
-				show_time_layer();
-				tapCounter = 0;
-			} else {
-				if (tapCounter == NEEDED_TAPS) {
-					if (isTimeLayerShown == 0) {
-						hide_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 1;
-					} else {
-						show_time_layer();
-						tapCounter = 0;
-						isTimeLayerShown = 0;
-					}				
-				}
-			}
+			handleTimeLayerState();
       //APP_LOG(APP_LOG_LEVEL_INFO, "Z axis negative. %d", tapCounter);
     }
     break;
@@ -426,15 +359,15 @@ static void tap_handler(AccelAxisType axis, int32_t direction) {
 }
 
 /**
- * Handle Time changes
+ * handle time changes
  */
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 	static char s_time_text[] = "00:00";
 
 	if(clock_is_24h_style() == true) {
-		// Use 24 hour format
+		// use 24 hour format
 		strftime(s_time_text, sizeof("00:00"), "%H:%M", tick_time);
-		// Change TextLayer
+		// change textLayer
 		int h = tick_time->tm_hour;
 		if((h >= 9) == (h < 17)) {
 			layer_set_hidden((Layer *) s_hack_layer, false);
