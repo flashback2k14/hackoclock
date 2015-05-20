@@ -36,8 +36,8 @@ int NEEDED_TAPS = 4;
 int tapCounter = 0;
 // != 0 --> true
 bool isAlwaysShownTimeActive = 0;
-bool isTimeLayerShown = 1; //change logic to standard value 0
-bool isBeerOclock = 1;		 //change logic to standard value 0
+bool isTimeLayerShown = 0;
+bool isBeerOclock = 0;
 
 /**
  * initialisation TextLayer
@@ -65,7 +65,7 @@ static void change_text_layer_to(TextLayer *layer, GRect location, bool isHidden
  * show time layer after specific tapCounter
  */
 static void show_time_layer() {
-	if (isBeerOclock == 0) {
+	if (isBeerOclock == 1) {
 		change_text_layer_to(s_hack_layer, FIRST_ROW_WT_RECT, true);
 		change_text_layer_to(s_beer_layer, FIRST_ROW_WT_RECT, false);
 	} else {
@@ -80,7 +80,7 @@ static void show_time_layer() {
  * hide time layer after specific tapCounter
  */
 static void hide_time_layer() {
-	if (isBeerOclock == 0) {
+	if (isBeerOclock == 1) {
 		change_text_layer_to(s_hack_layer, FIRST_ROW_WOT_RECT, true);
 		change_text_layer_to(s_beer_layer, FIRST_ROW_WOT_RECT, false);
 	} else {
@@ -310,14 +310,14 @@ static void handleTimeLayerState() {
 		tapCounter = 0;
 	} else {
 		if (tapCounter == NEEDED_TAPS) {
-			if (isTimeLayerShown == 0) {
+			if (isTimeLayerShown == 1) {
 				hide_time_layer();
 				tapCounter = 0;
-				isTimeLayerShown = 1;
+				isTimeLayerShown = 0;
 			} else {
 				show_time_layer();
 				tapCounter = 0;
-				isTimeLayerShown = 0;
+				isTimeLayerShown = 1;
 			}				
 		}
 	}
@@ -372,11 +372,11 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 		if((h >= 9) == (h < 17)) {
 			layer_set_hidden((Layer *) s_hack_layer, false);
 			layer_set_hidden((Layer *) s_beer_layer, true);
-			isBeerOclock = 1;
+			isBeerOclock = 0;
 		} else {
 			layer_set_hidden((Layer *) s_hack_layer, true);
 			layer_set_hidden((Layer *) s_beer_layer, false);
-			isBeerOclock = 0;
+			isBeerOclock = 1;
 		}
 	} else {
 		//use 12 hour format
@@ -386,11 +386,11 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
     if((h >= 9) == (h < 17)) {
 			layer_set_hidden((Layer *) s_hack_layer, false);
 			layer_set_hidden((Layer *) s_beer_layer, true);
-			isBeerOclock = 1;
+			isBeerOclock = 0;
 		} else {
 			layer_set_hidden((Layer *) s_hack_layer, true);
 			layer_set_hidden((Layer *) s_beer_layer, false);
-			isBeerOclock = 0;
+			isBeerOclock = 1;
 		}
 	}	
 	
