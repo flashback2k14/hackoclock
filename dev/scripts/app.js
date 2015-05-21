@@ -21,9 +21,9 @@ function setOptionsFromPebble() {
             $("input[type=radio][name=rbPebbleOrPebbleTime][value=pebbleTime]").prop({checked: true}).checkboxradio("refresh");
             $('#colorChoosePebbleTimeContainer').stop(true,true).show(500);
         }
-        else if (key === "rbPebbleTime" && obj["rbDefault"]) $("input[type=radio][name=rbFirstRowText][value=default]").prop({checked: true}).checkboxradio("refresh");
-        else if (key === "rbPebbleTime" && obj["rbHack"]) $("input[type=radio][name=rbFirstRowText][value=hack]").prop({checked: true}).checkboxradio("refresh");
-        else if (key === "rbPebbleTime" && obj["rbBeer"]) $("input[type=radio][name=rbFirstRowText][value=beer]").prop({checked: true}).checkboxradio("refresh");
+        else if (key === "rbDefault" && obj["rbDefault"]) $("input[type=radio][name=rbFirstRowText][value=default]").prop({checked: true}).checkboxradio("refresh");
+        else if (key === "rbHack" && obj["rbHack"]) $("input[type=radio][name=rbFirstRowText][value=hack]").prop({checked: true}).checkboxradio("refresh");
+        else if (key === "rbBeer" && obj["rbBeer"]) $("input[type=radio][name=rbFirstRowText][value=beer]").prop({checked: true}).checkboxradio("refresh");
         else if (key === "bgBeer" && obj["rbPebbleTime"]) $("#bgBeer").val(obj["bgBeer"]).selectmenu("refresh");
         else if (key === "bgHack" && obj["rbPebbleTime"]) $("#bgHack").val(obj["bgHack"]).selectmenu("refresh");
         else if (key === "bgOclock" && obj["rbPebbleTime"]) $("#bgOclock").val(obj["bgOclock"]).selectmenu("refresh");
