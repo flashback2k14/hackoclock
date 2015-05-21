@@ -49,6 +49,21 @@ bool isBeerOclock = 0;
 enum FirstRowText isAlwaysShownBeerHackDefault = DEFAULT;
 
 /**
+ * DEBUG method
+ */
+static void DEBUG() {
+	APP_LOG(APP_LOG_LEVEL_INFO, "----------- BEGIN DEBUG -----------");
+	APP_LOG(APP_LOG_LEVEL_INFO, "NEEDED_TAPS: %d", NEEDED_TAPS);
+	APP_LOG(APP_LOG_LEVEL_INFO, "tapCounter: %d", tapCounter);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isAlwaysShownTimeActive: %d", isAlwaysShownTimeActive);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isTimeLayerShown: %d", isTimeLayerShown);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isBeerOclock: %d", isBeerOclock);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isAlwaysShownBeerHackDefault <D=0; AB=1; AH=2>: %d", isAlwaysShownBeerHackDefault);
+	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUG ------------");
+}
+
+
+/**
  * initialisation TextLayer
  */
 static TextLayer* init_text_layer(GRect location, const char *text, GColor textColor, GColor backgroundColor, const char *textFont, GTextAlignment alignment, bool isHidden) {
@@ -73,13 +88,13 @@ static void change_text_layer_to(TextLayer *layer, GRect location, bool isHidden
 /**
  * switch TextLayer
  */
-static void switch_text_layers(bool showMeTime, bool showMeHack, bool showMeBeer) {
+static void switch_text_layers_first_row(bool showMeTime, bool hideMeHack, bool hideMeBeer) {
 	if (showMeTime) {
-		change_text_layer_to(s_hack_layer, FIRST_ROW_WT_RECT, showMeHack);
-		change_text_layer_to(s_beer_layer, FIRST_ROW_WT_RECT, showMeBeer);
+		change_text_layer_to(s_hack_layer, FIRST_ROW_WT_RECT, hideMeHack);
+		change_text_layer_to(s_beer_layer, FIRST_ROW_WT_RECT, hideMeBeer);
 	} else {
-		change_text_layer_to(s_hack_layer, FIRST_ROW_WOT_RECT, showMeHack);
-		change_text_layer_to(s_beer_layer, FIRST_ROW_WOT_RECT, showMeBeer);
+		change_text_layer_to(s_hack_layer, FIRST_ROW_WOT_RECT, hideMeHack);
+		change_text_layer_to(s_beer_layer, FIRST_ROW_WOT_RECT, hideMeBeer);
 	}
 }
 
@@ -88,13 +103,9 @@ static void switch_text_layers(bool showMeTime, bool showMeHack, bool showMeBeer
  */
 static void show_time_layer() {
 	if (isBeerOclock == 1) {
-		//change_text_layer_to(s_hack_layer, FIRST_ROW_WT_RECT, true);
-		//change_text_layer_to(s_beer_layer, FIRST_ROW_WT_RECT, false);
-		switch_text_layers(true, true, false);
+		switch_text_layers_first_row(true, true, false);
 	} else {
-		//change_text_layer_to(s_hack_layer, FIRST_ROW_WT_RECT, false);
-		//change_text_layer_to(s_beer_layer, FIRST_ROW_WT_RECT, true);
-		switch_text_layers(true, false, true);
+		switch_text_layers_first_row(true, false, true);
 	}
 	change_text_layer_to(s_oclock_layer, SECOND_ROW_WT_RECT, false);
 	change_text_layer_to(s_time_layer, THIRD_ROW_WT_RECT, false);
@@ -105,13 +116,9 @@ static void show_time_layer() {
  */
 static void hide_time_layer() {
 	if (isBeerOclock == 1) {
-		//change_text_layer_to(s_hack_layer, FIRST_ROW_WOT_RECT, true);
-		//change_text_layer_to(s_beer_layer, FIRST_ROW_WOT_RECT, false);
-		switch_text_layers(false, true, false);
+		switch_text_layers_first_row(false, true, false);
 	} else {
-		//change_text_layer_to(s_hack_layer, FIRST_ROW_WOT_RECT, false);
-		//change_text_layer_to(s_beer_layer, FIRST_ROW_WOT_RECT, true);
-		switch_text_layers(false, false, true);
+		switch_text_layers_first_row(false, false, true);
 	}
 	change_text_layer_to(s_oclock_layer, SECOND_ROW_WOT_RECT, false);
 	change_text_layer_to(s_time_layer, THIRD_ROW_WT_RECT, true);
@@ -226,8 +233,13 @@ static void perform_customisation(Tuple *t) {
 	
 	switch(t->key) {
 		case KEY_SHOW_ALWAYS_TIME: 
-			if (strcmp(t->value->cstring, "on") == 0) { isAlwaysShownTimeActive = 1; show_time_layer(); }
-			else isAlwaysShownTimeActive = 0;
+			if (strcmp(t->value->cstring, "on") == 0) { 
+				isAlwaysShownTimeActive = 1; 
+				isTimeLayerShown = 1;
+				show_time_layer(); 
+			} else {
+				isAlwaysShownTimeActive = 0;
+			}
 			break;
 		
 		case KEY_CUSTOM_NEEDED_TAPS: 
@@ -235,9 +247,26 @@ static void perform_customisation(Tuple *t) {
 			break;
 		
 		case KEY_SHOW_ALWAYS_BEER_OR_HACK:
-			if (strcmp(t->value->cstring, "Hack") == 0) isAlwaysShownBeerHackDefault = ALWAYS_HACK;
-			else if (strcmp(t->value->cstring, "Beer") == 0) isAlwaysShownBeerHackDefault = ALWAYS_BEER;
-			else isAlwaysShownBeerHackDefault = DEFAULT;		
+			if (strcmp(t->value->cstring, "Hack") == 0) {
+				isAlwaysShownBeerHackDefault = ALWAYS_HACK;
+				isBeerOclock = 0;
+				if (isTimeLayerShown == 1) {
+					switch_text_layers_first_row(true, false, true);
+				}	else {
+					switch_text_layers_first_row(false, false, true);
+				}				
+			} else if (strcmp(t->value->cstring, "Beer") == 0) {
+				isAlwaysShownBeerHackDefault = ALWAYS_BEER;
+				isBeerOclock = 1;
+				if (isTimeLayerShown == 1) {
+					switch_text_layers_first_row(true, true, false);
+				} else {
+					switch_text_layers_first_row(false, true, false);
+				}
+			}
+			else {
+				isAlwaysShownBeerHackDefault = DEFAULT;
+			}
 			break;
 		
 		#ifdef PBL_COLOR
@@ -340,6 +369,7 @@ static void handleTimeLayerState() {
 	if (isAlwaysShownTimeActive == 1) {
 		show_time_layer();
 		tapCounter = 0;
+		isTimeLayerShown = 1;
 	} else {
 		if (tapCounter == NEEDED_TAPS) {
 			if (isTimeLayerShown == 1) {
@@ -386,24 +416,17 @@ static void tap_handler(AccelAxisType axis, int32_t direction) {
 
 /**
  * handle first row text
- *
- * show_time_layer müsste noch probleme bereiten bei ALWAYS_HACK, ALWAYS_BEER
- *
  */
 static void handleFirstRowText(bool isWorkingTime) {
 	switch(isAlwaysShownBeerHackDefault) {
 		case ALWAYS_HACK:
-			//layer_set_hidden((Layer *) s_hack_layer, false);
-			//layer_set_hidden((Layer *) s_beer_layer, true);
-		  switch_text_layers(false, false, true);
-		  isBeerOclock = 0;
+		  if (isTimeLayerShown == 1) switch_text_layers_first_row(true, false, true);
+		  else switch_text_layers_first_row(false, false, true);
 			break;
 
 		case ALWAYS_BEER:
-			//layer_set_hidden((Layer *) s_hack_layer, true);
-			//layer_set_hidden((Layer *) s_beer_layer, false);
-		  switch_text_layers(false, true, false);
-		  isBeerOclock = 1;
+		  if (isTimeLayerShown == 1) switch_text_layers_first_row(true, true, false);
+			else switch_text_layers_first_row(false, true, false);
 			break;
 
 		default:
@@ -431,15 +454,9 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 		// change textLayer
 		int h = tick_time->tm_hour;
 		if((h >= 9) == (h < 17)) {
-			//layer_set_hidden((Layer *) s_hack_layer, false);
-			//layer_set_hidden((Layer *) s_beer_layer, true);
 			handleFirstRowText(true);
-			isBeerOclock = 0;
 		} else {
-			//layer_set_hidden((Layer *) s_hack_layer, true);
-			//layer_set_hidden((Layer *) s_beer_layer, false);
 			handleFirstRowText(false);
-			isBeerOclock = 1;
 		}
 	} else {
 		//use 12 hour format
@@ -447,9 +464,9 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 		//change TextLayer
 		int h = tick_time->tm_hour;
     if((h >= 9) == (h < 17)) {
-			handleFirstRowText(true);		
+			handleFirstRowText(true);
 		} else {
-			handleFirstRowText(false); 
+			handleFirstRowText(false);
 		}
 	}	
 	

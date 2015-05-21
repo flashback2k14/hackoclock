@@ -68,7 +68,7 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				"KEY_TC_PBL_TIME" : options.tcPblTime
 			};
 		}
-		console.log("DEBUG: CustomData: " + JSON.stringify(customData));
+		//console.log("DEBUG: CustomData: " + JSON.stringify(customData));
 		
 		Pebble.sendAppMessage(customData, 
 		function(e) {console.log("Sending customisation data to pebble...");},
