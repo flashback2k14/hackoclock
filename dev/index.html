@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-	<link rel="stylesheet" href="stylesheets/styles.css" />
-    <link rel="stylesheet" href="stylesheets/colorselects.css" />
+	<link rel="stylesheet" href="stylesheets/theme.css" />
+    <link rel="stylesheet" href="stylesheets/colorpicker.css" />
   </head>
   <body>
+    <!-- Loading Panel -->
+    <div class="loader"></div>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
@@ -21,20 +23,36 @@
 	  <div class="main_content">
           <!-- Config Options -->
           <div id="chooseOtherConfigContainer">
+              <label for="inputNeededTaps"><b>Enter number for needed Shakes <br/> to show the Time:</b></label>
+              <input type="number" name="inputNeededTaps" id="inputNeededTaps" placeholder="4" min="0" />
+              <br /><hr /><br />
               <label for="selectAlwaysTime"><b>Show always the Time:</b></label>
               <select name="selectAlwaysTime" id="selectAlwaysTime" data-theme="a" data-role="slider">
                   <option value="off" selected>Off</option>
                   <option value="on">On</option>
               </select>
-
-              <label for="inputNeededTaps"><b>Enter number for needed Shakes <br/> to show the Time:</b></label>
-              <input type="number" name="inputNeededTaps" id="inputNeededTaps" placeholder="4" min="0" />
           </div>
+          <br /><hr /><br />
+          <!-- Choose First Row Text Type -->
+          <div id="chooseFirstRowTextType">
+              <form>
+                  <fieldset data-role="controlgroup">
+                      <legend><b>Choose your first row text:</b></legend>
+                      <input type="radio" class="radio" name="rbFirstRowText" id="rbDefault" data-theme="a" value="default" checked />
+                      <label for="rbDefault">Default: Switch Text</label>
+                      <input type="radio" class="radio" name="rbFirstRowText" id="rbHack" data-theme="a" value="hack" />
+                      <label for="rbHack">Only show HACK</label>
+                      <input type="radio" class="radio" name="rbFirstRowText" id="rbBeer" data-theme="a" value="beer" />
+                      <label for="rbBeer">Only show BEER</label>
+                  </fieldset>
+              </form>
+          </div>
+          <br /><hr /><br />
           <!-- Choose Watch Type -->
           <div id="chooseWatchType">
               <form>
                   <fieldset data-role="controlgroup">
-                  <legend><b>Choose your Pebble Watch:</b></legend>
+                  <legend><b>Choose your Pebble Watch <br/> for Color Options:</b></legend>
                   <input type="radio" class="radio" name="rbPebbleOrPebbleTime" id="rbPebble" data-theme="a" value="pebble" />
                   <label for="rbPebble">Pebble / Pebble Steel</label>
                   <input type="radio" class="radio" name="rbPebbleOrPebbleTime" id="rbPebbleTime" data-theme="a" value="pebbleTime" />
@@ -760,6 +778,7 @@
                   </select>
               </fieldset>
           </div>
+          <br /><hr /><br />
           <!-- BUTTONS-->
           <div class="ui-body ui-body-b">
 		    <fieldset class="ui-grid-a">
@@ -777,81 +796,6 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	<!-- SCRIPT -->
-    <script>
-      // Get choosen Options
-      function saveOptions() {
-        var options = {};
-        //Add all textual values
-        $('textarea, select, [type="hidden"], [type="password"], [type="text"], [type="number"]').each(function(){options[$(this).attr('id')] = $(this).val();});
-        //Add all checkbox type values
-        $('[type="radio"], [type="checkbox"]').each(function(){options[$(this).attr('id')] = $(this).is(':checked');});
-        return options;
-      }
-      //Set form values to whatever is passed in.
-      function setOptionsFromPebble() {
-          var obj = jQuery.parseJSON(decodeURIComponent(window.location.search.substring(1)));
-          for(var key in obj) {
-              if (key === "selectAlwaysTime") $("#selectAlwaysTime").val(obj["selectAlwaysTime"]).slider("refresh");
-              else if (key === "inputNeededTaps") $("#inputNeededTaps").val(obj["inputNeededTaps"]);
-              else if (key === "rbPebble" && obj["rbPebble"]) {
-                  $("input[type=radio][name=rbPebbleOrPebbleTime][value=pebble]").prop({checked: true}).checkboxradio("refresh");
-                  $('#colorChoosePebbleContainer').stop(true,true).show(500);
-              }
-              else if (key === "rbPebbleTime" && obj["rbPebbleTime"]) {
-                  $("input[type=radio][name=rbPebbleOrPebbleTime][value=pebbleTime]").prop({checked: true}).checkboxradio("refresh");
-                  $('#colorChoosePebbleTimeContainer').stop(true,true).show(500);
-              }
-              else if (key === "bgBeer" && obj["rbPebbleTime"]) $("#bgBeer").val(obj["bgBeer"]).selectmenu("refresh");
-              else if (key === "bgHack" && obj["rbPebbleTime"]) $("#bgHack").val(obj["bgHack"]).selectmenu("refresh");
-              else if (key === "bgOclock" && obj["rbPebbleTime"]) $("#bgOclock").val(obj["bgOclock"]).selectmenu("refresh");
-              else if (key === "bgTime" && obj["rbPebbleTime"]) $("#bgTime").val(obj["bgTime"]).selectmenu("refresh");
-              else if (key === "bgWbg" && obj["rbPebbleTime"]) $("#bgWbg").val(obj["bgWbg"]).selectmenu("refresh");
-              else if (key === "tcBeer" && obj["rbPebbleTime"]) $("#tcBeer").val(obj["tcBeer"]).selectmenu("refresh");
-              else if (key === "tcHack" && obj["rbPebbleTime"]) $("#tcHack").val(obj["tcHack"]).selectmenu("refresh");
-              else if (key === "tcOclock" && obj["rbPebbleTime"]) $("#tcOclock").val(obj["tcOclock"]).selectmenu("refresh");
-              else if (key === "tcTime" && obj["rbPebbleTime"]) $("#tcTime").val(obj["tcTime"]).selectmenu("refresh");
-              else if (key === "bgPblBeer" && obj["rbPebble"]) $("#bgPblBeer").val(obj["bgPblBeer"]).selectmenu("refresh");
-              else if (key === "bgPblHack" && obj["rbPebble"]) $("#bgPblHack").val(obj["bgPblHack"]).selectmenu("refresh");
-              else if (key === "bgPblOclock" && obj["rbPebble"]) $("#bgPblOclock").val(obj["bgPblOclock"]).selectmenu("refresh");
-              else if (key === "bgPblTime" && obj["rbPebble"]) $("#bgPblTime").val(obj["bgPblTime"]).selectmenu("refresh");
-              else if (key === "bgPblWbg" && obj["rbPebble"]) $("#bgPblWbg").val(obj["bgPblWbg"]).selectmenu("refresh");
-              else if (key === "tcPblBeer" && obj["rbPebble"]) $("#tcPblBeer").val(obj["tcPblBeer"]).selectmenu("refresh");
-              else if (key === "tcPblHack" && obj["rbPebble"]) $("#tcPblHack").val(obj["tcPblHack"]).selectmenu("refresh");
-              else if (key === "tcPblOclock" && obj["rbPebble"]) $("#tcPblOclock").val(obj["tcPblOclock"]).selectmenu("refresh");
-              else if (key === "tcPblTime" && obj["rbPebble"]) $("#tcPblTime").val(obj["tcPblTime"]).selectmenu("refresh");
-              else console.log("key: " + key + " not defined!");
-          }
-      }
-      // Document ready
-      $().ready(function() {
-          $(function() {
-              setOptionsFromPebble();
-          });
-          // Show Hide Color Choose Container
-          $('#colorChoosePebbleContainer').hide();
-          $('#colorChoosePebbleTimeContainer').hide();
-          $(".radio").change(function () {
-              if (this.value == "pebble") {
-                  $('#colorChoosePebbleTimeContainer').stop(true,true).hide(500);
-                  $('#colorChoosePebbleContainer').stop(true,true).show(500);
-              } else {
-                  $('#colorChoosePebbleContainer').stop(true,true).hide(500);
-                  $('#colorChoosePebbleTimeContainer').stop(true,true).show(500);
-              }
-          });
-          // Cancel Button
-          $("#b-cancel").click(function() {
-              console.log("Cancel");
-              document.location = "pebblejs://close";
-          });
-          // Submit Button
-          $("#b-submit").click(function() {
-              console.log("Submit");
-              var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
-              console.log("Warping to: " + location);
-              document.location = location;
-          });
-      });
-    </script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
