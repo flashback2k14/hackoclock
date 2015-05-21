@@ -2,6 +2,8 @@
  * http://www.willpeavy.com/minifier/
  * http://jscompress.com/
  * http://cssminifier.com/
+ * https://ninedof.wordpress.com/2014/05/24/pebble-sdk-2-0-tutorial-9-app-configuration/
+ * http://developer.getpebble.com/docs/c/Foundation/Storage/
  */
 var isPebbleTime;
 var options = {};
@@ -11,7 +13,7 @@ Pebble.addEventListener("ready", function(e) {
 	console.log("PebbleKit JS is ready!");
 	if (Pebble.getActiveWatchInfo) {
 		var info = Pebble.getActiveWatchInfo();
-		isPebbleTime = (info.model.indexOf("basalt") != -1 || info.model.indexOf("time") != -1 ) ? true : false;
+		isPebbleTime = (info.model.indexOf("basalt") !== -1 || info.model.indexOf("time") !== -1 ) ? true : false;
 		//console.log("DEBUG: Pebble Model: " + info.model);
 		//console.log("DEBUG: isPebbleTime: " + isPebbleTime);
 	} else {
@@ -22,8 +24,6 @@ Pebble.addEventListener("ready", function(e) {
 Pebble.addEventListener("showConfiguration", function(e) {
 	console.log("Showing Configuration Page!");
 	Pebble.openURL('http://flashback2k14.github.io/hackoclock/public/index_min.html?' + encodeURIComponent(JSON.stringify(options)));
-	//console.log("DEBUG: Options: " + JSON.stringify(options));
-	//console.log("DEBUG: encode Options: " + encodeURIComponent(JSON.stringify(options)));
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {
@@ -32,10 +32,16 @@ Pebble.addEventListener("webviewclosed", function(e) {
 		options = JSON.parse(decodeURIComponent(e.response));
 		//console.log("DEBUG: Options: " + JSON.stringify(options));
 		
+		var getUserChooseForFirstRow = "default";
+		if (options.rbBeer) getUserChooseForFirstRow = "Beer";
+		else if (options.rbHack) getUserChooseForFirstRow = "Hack";
+		else getUserChooseForFirstRow = "default";
+		
 		if (isPebbleTime) {
 			customData = {
 				"KEY_SHOW_ALWAYS_TIME" : options.selectAlwaysTime,
 				"KEY_CUSTOM_NEEDED_TAPS" : options.inputNeededTaps,
+				"KEY_SHOW_ALWAYS_BEER_OR_HACK" : getUserChooseForFirstRow,
 				"KEY_BG_BEER"  : options.bgBeer,
 				"KEY_BG_HACK" : options.bgHack,
 				"KEY_BG_OCLOCK" : options.bgOclock,
@@ -50,6 +56,7 @@ Pebble.addEventListener("webviewclosed", function(e) {
 			customData = {
 				"KEY_SHOW_ALWAYS_TIME" : options.selectAlwaysTime,
 				"KEY_CUSTOM_NEEDED_TAPS" : options.inputNeededTaps,
+				"KEY_SHOW_ALWAYS_BEER_OR_HACK" : getUserChooseForFirstRow,
 				"KEY_BG_PBL_BEER"  : options.bgPblBeer,
 				"KEY_BG_PBL_HACK" : options.bgPblHack,
 				"KEY_BG_PBL_OCLOCK" : options.bgPblOclock,
@@ -61,7 +68,7 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				"KEY_TC_PBL_TIME" : options.tcPblTime
 			};
 		}
-		//console.log("DEBUG: CustomData: " + JSON.stringify(customData));
+		console.log("DEBUG: CustomData: " + JSON.stringify(customData));
 		
 		Pebble.sendAppMessage(customData, 
 		function(e) {console.log("Sending customisation data to pebble...");},

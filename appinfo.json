@@ -11,6 +11,7 @@
         "KEY_BG_TIME": 5,
         "KEY_BG_WINBG": 6,
         "KEY_CUSTOM_NEEDED_TAPS": 1,
+        "KEY_SHOW_ALWAYS_BEER_OR_HACK": 20,
         "KEY_SHOW_ALWAYS_TIME": 0,
         "KEY_TC_BEER": 7,
         "KEY_TC_HACK": 8,
