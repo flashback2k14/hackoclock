@@ -118,6 +118,17 @@ static void DEBUG() {
 	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUG ------------");
 }
 
+#ifdef PBL_COLOR
+static void DEBUGSTRUCTS() {
+	APP_LOG(APP_LOG_LEVEL_INFO, "----------- BEGIN DEBUGSTRUCTS -----------");
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgHack: %s", userCDColorBG.bgHack);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgBeer: %s", userCDColorBG.bgBeer);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgOclock: %s", userCDColorBG.bgOclock);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgTime: %s", userCDColorBG.bgTime);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgWbg: %s", userCDColorBG.bgWbg);
+	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUGSTRUCTS ------------");	
+}
+#endif
 
 /**
  * initialisation TextLayer
@@ -559,8 +570,6 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
  * get user custom data
  */
 static void get_user_data_from_persist() {	
-	APP_LOG(APP_LOG_LEVEL_ERROR, "BEGIN get_user_data_from_persist");
-	
 	#ifdef PBL_COLOR
 		if (persist_exists(KEY_CD_COLOR_BG)) persist_read_data(KEY_CD_COLOR_BG, &userCDColorBG, sizeof(userCDColorBG));
 		else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_BG not defined!");
@@ -573,16 +582,12 @@ static void get_user_data_from_persist() {
 		
 	if (persist_exists(KEY_CD_COLOR_FLAGS)) persist_read_data(KEY_CD_COLOR_FLAGS, &userCDFlags, sizeof(userCDFlags));
 	else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_FLAGS not defined!");
-	
-	APP_LOG(APP_LOG_LEVEL_ERROR, "END get_user_data_from_persist");
 }
 
 /**
  * save user custom data
  */
-static void set_user_data_to_persist() {
-	APP_LOG(APP_LOG_LEVEL_ERROR, "BEGIN set_user_data_to_persist");
-	
+static void set_user_data_to_persist() { 
 	userCDFlags.tapCounter = tapCounter;
 	userCDFlags.isAlwaysShownTimeActive = isAlwaysShownTimeActive;
 	userCDFlags.isTimeLayerShown = isTimeLayerShown;
@@ -595,35 +600,36 @@ static void set_user_data_to_persist() {
 		persist_write_data(KEY_CD_COLOR_PBL, &userCDColorPbl, sizeof(userCDColorPbl));
 	#endif
 	persist_write_data(KEY_CD_COLOR_FLAGS, &userCDFlags, sizeof(userCDFlags));
-	
-	APP_LOG(APP_LOG_LEVEL_ERROR, "END set_user_data_to_persist");
 }
 
+/**
+ * get color from user customisation
+ */
+static GColor getUserColor(GColor defaultColor, char *colorName) {
+	return (strcmp(colorName, NULLSTRING) == 0) ? defaultColor : getColor(colorName);
+}
 
+/**
+ *
+ */
 static void window_load(Window *window) {
 		
 	get_user_data_from_persist();
-	
-	if (strcmp(userCDColorBG.bgHack, NULLSTRING) == 0) {
-		APP_LOG(APP_LOG_LEVEL_ERROR, "userCDColorBG.bgHack is empty");
-	} else {
-		APP_LOG(APP_LOG_LEVEL_ERROR, "userCDColorBG.bgHack is not empty");
-	}
-		
+					
 	#ifdef PBL_COLOR
-		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", GColorJaegerGreen, GColorBlack, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
-		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", GColorRed, GColorBlack, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
-		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", GColorWhite, GColorBlack, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
-		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", GColorWhite, GColorBlack, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
-		window_set_background_color(s_window, GColorBlack);
+		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", getUserColor(GColorJaegerGreen, userCDColorTC.tcHack), getUserColor(GColorBlack, userCDColorBG.bgHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
+		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", getUserColor(GColorRed, userCDColorTC.tcBeer), getUserColor(GColorBlack, userCDColorBG.bgBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
+		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", getUserColor(GColorWhite, userCDColorTC.tcOclock), getUserColor(GColorBlack, userCDColorBG.bgOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
+		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", getUserColor(GColorWhite, userCDColorTC.tcTime), getUserColor(GColorBlack, userCDColorBG.bgTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
+		window_set_background_color(s_window, getUserColor(GColorBlack, userCDColorBG.bgWbg));
 	#else
-		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
-		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
-		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
-		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
-		window_set_background_color(s_window, GColorBlack);
+		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", getUserColor(GColorWhite, userCDColorPbl.tcPblHack), getUserColor(GColorClear, userCDColorPbl.bgPblHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
+		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", getUserColor(GColorWhite, userCDColorPbl.tcPblBeer), getUserColor(GColorClear, userCDColorPbl.bgPblBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
+		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", getUserColor(GColorWhite, userCDColorPbl.tcPblOclock), getUserColor(GColorClear, userCDColorPbl.bgPblOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
+		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", getUserColor(GColorWhite, userCDColorPbl.tcPblTime), getUserColor(GColorClear, userCDColorPbl.bgPblTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
+		window_set_background_color(s_window, getUserColor(GColorBlack, userCDColorPbl.bgPblWbg));
 	#endif	
-		
+				
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_hack_layer));
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_beer_layer));
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_oclock_layer));
@@ -665,53 +671,3 @@ int main(void) {
   app_event_loop();
   deinit();
 }
-
-
-/**
-Setting top to                           : /tmp/tmpjuDWPf 
-Setting out to                           : /tmp/tmpjuDWPf/build 
-Found Pebble SDK for basalt in:          : /app/sdk3/Pebble/basalt 
-Checking for program gcc,cc              : arm-none-eabi-gcc 
-Checking for program ar                  : arm-none-eabi-ar 
-Found Pebble SDK for aplite in:          : /app/sdk3/Pebble/aplite 
-Checking for program gcc,cc              : arm-none-eabi-gcc 
-Checking for program ar                  : arm-none-eabi-ar 
-'configure' finished successfully (0.101s)
-Waf: Entering directory `/tmp/tmpjuDWPf/build'
-[ 1/35] pebble-js-app.js: src/config.js -> build/pebble-js-app.js
-[ 2/35] Start build for basalt: 
-[ 3/35] subst: ../../app/sdk3/Pebble/common/pebble_app.ld.template -> build/basalt/pebble_app.ld.auto
-[ 4/35] timeline_resources.json: appinfo.json -> build/basalt/timeline_resources.json
-[ 5/35] appinfo.auto.c: appinfo.json -> build/basalt/appinfo.auto.c
-[ 6/35] icon.png: resources/images/icon.png -> build/resources/basalt/images/icon.png
-[ 7/35] resource_ids.auto.h: ../../app/sdk3/Pebble/common/tools/generate_resource_code.py -> build/basalt/src/resource_ids.auto.h
-[ 8/35] app_resources.pbpack.data: build/resources/basalt/images/icon.png ../../app/sdk3/Pebble/common/tools/pbpack_meta_data.py -> build/basalt/app_resources.pbpack.data
-[ 9/35] app_resources.pbpack.manifest: build/resources/basalt/images/icon.png ../../app/sdk3/Pebble/common/tools/pbpack_meta_data.py -> build/basalt/app_resources.pbpack.manifest
-[10/35] app_resources.pbpack.table: build/resources/basalt/images/icon.png ../../app/sdk3/Pebble/common/tools/pbpack_meta_data.py -> build/basalt/app_resources.pbpack.table
-[11/35] c: build/basalt/appinfo.auto.c -> build/basalt/appinfo.auto.c.22.o
-[12/35] c: src/hackoclock.c -> build/src/hackoclock.c.22.o
-[13/35] app_resources.pbpack: build/basalt/app_resources.pbpack.manifest build/basalt/app_resources.pbpack.table build/basalt/app_resources.pbpack.data -> build/basalt/app_resources.pbpack
-../src/hackoclock.c:110:13: warning: 'DEBUG' defined but not used [-Wunused-function]
-[14/35] cprogram: build/src/hackoclock.c.22.o build/basalt/appinfo.auto.c.22.o -> build/basalt/pebble-app.elf
-[15/35] Start build for aplite: 
-[16/35] subst: ../../app/sdk3/Pebble/common/pebble_app.ld.template -> build/aplite/pebble_app.ld.auto
-[17/35] timeline_resources.json: appinfo.json -> build/aplite/timeline_resources.json
-[18/35] appinfo.auto.c: appinfo.json -> build/aplite/appinfo.auto.c
-[19/35] icon.pbi: resources/images/icon.png ../../app/sdk3/Pebble/common/tools/bitmapgen.py -> build/resources/aplite/images/icon.pbi
-[20/35] resource_ids.auto.h: ../../app/sdk3/Pebble/common/tools/generate_resource_code.py -> build/aplite/src/resource_ids.auto.h
-[22/35] c: build/aplite/appinfo.auto.c -> build/aplite/appinfo.auto.c.23.o
-[22/35] c: src/hackoclock.c -> build/src/hackoclock.c.23.o
-[23/35] app_resources.pbpack.table: build/resources/aplite/images/icon.pbi ../../app/sdk3/Pebble/common/tools/pbpack_meta_data.py -> build/aplite/app_resources.pbpack.table
-[24/35] app_resources.pbpack.manifest: build/resources/aplite/images/icon.pbi ../../app/sdk3/Pebble/common/tools/pbpack_meta_data.py -> build/aplite/app_resources.pbpack.manifest
-../src/hackoclock.c: In function 'window_load':
-../src/hackoclock.c:607:13: error: 'userCDColorBG' undeclared (first use in this function)
-../src/hackoclock.c:607:13: note: each undeclared identifier is reported only once for each function it appears in
-../src/hackoclock.c: At top level:
-../src/hackoclock.c:110:13: warning: 'DEBUG' defined but not used [-Wunused-function]
-Waf: Leaving directory `/tmp/tmpjuDWPf/build'
-Build failed
- -> task in 'aplite/pebble-app.elf' failed (exit status 1): 
-	{task 140485209009616: c hackoclock.c -> hackoclock.c.23.o}
-['arm-none-eabi-gcc', '-std=c99', '-mcpu=cortex-m3', '-mthumb', '-ffunction-sections', '-fdata-sections', '-g', '-Os', '-Wall', '-Wextra', '-Werror', '-Wno-unused-parameter', '-Wno-error=unused-function', '-Wno-error=unused-variable', '-fPIE', '-I/tmp/app/sdk3/Pebble/aplite/include', '-I/app/sdk3/Pebble/aplite/include', '-I/tmp/tmpjuDWPf/build', '-I/tmp/tmpjuDWPf', '-I/tmp/tmpjuDWPf/build/src', '-I/tmp/tmpjuDWPf/src', '-I/tmp/tmpjuDWPf/build/aplite', '-I/tmp/tmpjuDWPf/aplite', '-DRELEASE', '-DPBL_PLATFORM_APLITE', '-DPBL_BW', '-DPBL_SDK_2', '-D__FILE_NAME__="hackoclock.c"', '../src/hackoclock.c', '-c', '-o', 'src/hackoclock.c.23.o']
-[ERROR   ] A compilation error occurred
-*/
