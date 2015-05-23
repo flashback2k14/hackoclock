@@ -33,10 +33,10 @@ Pebble.addEventListener("webviewclosed", function(e) {
 		options = JSON.parse(decodeURIComponent(e.response));
 		//console.log("DEBUG: Options: " + JSON.stringify(options));
 		
-		var getUserChooseForFirstRow = "default";
+		var getUserChooseForFirstRow = "Default";
 		if (options.rbBeer) getUserChooseForFirstRow = "Beer";
 		else if (options.rbHack) getUserChooseForFirstRow = "Hack";
-		else getUserChooseForFirstRow = "default";
+		else getUserChooseForFirstRow = "Default";
 		
 		if (isPebbleTime) {
 			customData = {
@@ -69,24 +69,8 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				"KEY_TC_PBL_TIME" : options.tcPblTime
 			};
 		}
-		console.log("DEBUG: CustomData: " + JSON.stringify(customData));
-		/**
-			CustomData: {
-				"KEY_SHOW_ALWAYS_TIME":"on",
-				"KEY_CUSTOM_NEEDED_TAPS":"",
-				"KEY_SHOW_ALWAYS_BEER_OR_HACK":"default",
-				"KEY_BG_BEER":"GColorBlack",
-				"KEY_BG_HACK":"GColorBlack",
-				"KEY_BG_OCLOCK":"GColorBlack",
-				"KEY_BG_TIME":"GColorBlack",
-				"KEY_BG_WINBG":"GColorBlack",
-				"KEY_TC_BEER":"GColorRed",
-				"KEY_TC_HACK":"GColorJaegerGreen",
-				"KEY_TC_OCLOCK":"GColorWhite",
-				"KEY_TC_TIME":"GColorWhite"
-			}
-		 */
-		
+		//console.log("DEBUG: CustomData: " + JSON.stringify(customData));
+				
 		Pebble.sendAppMessage(customData, 
 		function(e) {console.log("Sending customisation data to pebble...");},
 		function(e) {console.log("Sending customisation data to pebble failed!");});
