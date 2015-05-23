@@ -4,6 +4,7 @@
  * http://cssminifier.com/
  * https://ninedof.wordpress.com/2014/05/24/pebble-sdk-2-0-tutorial-9-app-configuration/
  * http://developer.getpebble.com/docs/c/Foundation/Storage/
+ * http://developer.getpebble.com/guides/pebble-apps/app-structure/persistent-storage/#writing-data-in-persistent-storage
  */
 var isPebbleTime;
 var options = {};
@@ -68,7 +69,23 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				"KEY_TC_PBL_TIME" : options.tcPblTime
 			};
 		}
-		//console.log("DEBUG: CustomData: " + JSON.stringify(customData));
+		console.log("DEBUG: CustomData: " + JSON.stringify(customData));
+		/**
+			CustomData: {
+				"KEY_SHOW_ALWAYS_TIME":"on",
+				"KEY_CUSTOM_NEEDED_TAPS":"",
+				"KEY_SHOW_ALWAYS_BEER_OR_HACK":"default",
+				"KEY_BG_BEER":"GColorBlack",
+				"KEY_BG_HACK":"GColorBlack",
+				"KEY_BG_OCLOCK":"GColorBlack",
+				"KEY_BG_TIME":"GColorBlack",
+				"KEY_BG_WINBG":"GColorBlack",
+				"KEY_TC_BEER":"GColorRed",
+				"KEY_TC_HACK":"GColorJaegerGreen",
+				"KEY_TC_OCLOCK":"GColorWhite",
+				"KEY_TC_TIME":"GColorWhite"
+			}
+		 */
 		
 		Pebble.sendAppMessage(customData, 
 		function(e) {console.log("Sending customisation data to pebble...");},
