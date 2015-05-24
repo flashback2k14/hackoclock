@@ -5,11 +5,18 @@ function saveOptions() {
     $('textarea, select, [type="hidden"], [type="password"], [type="text"], [type="number"]').each(function(){options[$(this).attr('id')] = $(this).val();});
     //Add all checkbox type values
     $('[type="radio"], [type="checkbox"]').each(function(){options[$(this).attr('id')] = $(this).is(':checked');});
+    // set options to localStorage
+    localStorage.setItem("customPebble", JSON.stringify(options));
+    // return options
     return options;
 }
 //Set form values to whatever is passed in.
 function setOptionsFromPebble() {
-    var obj = jQuery.parseJSON(decodeURIComponent(window.location.search.substring(1)));
+    var obj;
+
+    if (window.location.search.substring(1) === "") obj = jQuery.parseJSON(localStorage.getItem("customPebble"));
+    else obj = jQuery.parseJSON(decodeURIComponent(window.location.search.substring(1)));
+
     for(var key in obj) {
         if (key === "selectAlwaysTime") $("#selectAlwaysTime").val(obj["selectAlwaysTime"]).slider("refresh");
         else if (key === "inputNeededTaps") $("#inputNeededTaps").val(obj["inputNeededTaps"]);
