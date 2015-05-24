@@ -23,16 +23,30 @@
 	  <div class="main_content">
           <!-- Config Options -->
           <div id="chooseOtherConfigContainer">
+              <label for="inputBeginWorkingTime"><b>Enter starting working time:</b></label>
+              <input type="number" name="inputBeginWorkingTime" id="inputBeginWorkingTime" placeholder="9" min="0" />
+              <hr /><br />
+              <label for="inputEndWorkingTime"><b>Enter ending working time:</b></label>
+              <input type="number" name="inputEndWorkingTime" id="inputEndWorkingTime" placeholder="17" min="0" />
+              <h4>must be based on 24-hour mode!</h4>
+              <hr /><br />
+              <label for="inputHackText"><b>Change HACK text to:</b></label>
+              <input type="text" name="inputHackText" id="inputHackText" placeholder="HACK" maxlength="6" />
+              <hr /><br />
+              <label for="inputBeerText"><b>Change BEER text to:</b></label>
+              <input type="text" name="inputBeerText" id="inputBeerText" placeholder="BEER" maxlength="6" />
+              <h4>must be based on 24-hour mode!</h4>
+              <hr /><br />
               <label for="inputNeededTaps"><b>Enter number for needed Shakes <br/> to show the Time:</b></label>
               <input type="number" name="inputNeededTaps" id="inputNeededTaps" placeholder="4" min="0" />
-              <br /><hr /><br />
+              <hr /><br />
               <label for="selectAlwaysTime"><b>Show always the Time:</b></label>
               <select name="selectAlwaysTime" id="selectAlwaysTime" data-theme="a" data-role="slider">
                   <option value="off" selected>Off</option>
                   <option value="on">On</option>
               </select>
           </div>
-          <br /><hr /><br />
+          <hr /><br />
           <!-- Choose First Row Text Type -->
           <div id="chooseFirstRowTextType">
               <form>
@@ -47,7 +61,7 @@
                   </fieldset>
               </form>
           </div>
-          <br /><hr /><br />
+          <hr /><br />
           <!-- Choose Watch Type -->
           <div id="chooseWatchType">
               <form>
@@ -778,7 +792,7 @@
                   </select>
               </fieldset>
           </div>
-          <br /><hr /><br />
+          <hr /><br />
           <!-- BUTTONS-->
           <div class="ui-body ui-body-b">
 		    <fieldset class="ui-grid-a">
