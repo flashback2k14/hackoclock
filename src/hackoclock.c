@@ -6,7 +6,17 @@
 #define FIRST_ROW_WOT_RECT GRect(0, 25, 144, 60)
 #define SECOND_ROW_WOT_RECT GRect(0, 75, 144, 60)
 	
-enum {
+#define KEY_CD_COLOR_BG 40
+#define KEY_CD_COLOR_TC 41
+#define KEY_CD_COLOR_PBL 42
+#define KEY_CD_COLOR_FLAGS 43
+	
+	
+static Window* s_window;
+static TextLayer *s_hack_layer, *s_beer_layer, *s_oclock_layer, *s_time_layer;
+static const char *NULLSTRING = "";
+	
+enum AppMessageKeys {
 	KEY_SHOW_ALWAYS_TIME = 0,
 	KEY_CUSTOM_NEEDED_TAPS = 1,
 	KEY_BG_BEER = 2,
@@ -35,34 +45,97 @@ enum FirstRowText {
 	ALWAYS_BEER = 1,
 	ALWAYS_HACK = 2
 };
-	
-static Window* s_window;
-static TextLayer *s_hack_layer, *s_beer_layer, *s_oclock_layer, *s_time_layer;
 
-int NEEDED_TAPS = 4;
-int tapCounter = 0;
-// 0 --> false
-// 1 --> true
-bool isAlwaysShownTimeActive = 0;
-bool isTimeLayerShown = 0;
-bool isBeerOclock = 0;
-enum FirstRowText isAlwaysShownBeerHackDefault = DEFAULT;
+#ifdef PBL_COLOR
+	typedef struct {
+		char bgHack[30];
+		char bgBeer[30];
+		char bgOclock[30];
+		char bgTime[30];
+		char bgWbg[30];
+	} __attribute__((__packed__)) CustomDataColorBG;
+
+	typedef struct {
+		char tcHack[30];
+		char tcBeer[30];
+		char tcOclock[30];
+		char tcTime[30];
+	} __attribute__((__packed__)) CustomDataColorTC;
+#else
+	typedef struct {
+		char bgPblHack[12];
+		char bgPblBeer[12];
+		char bgPblOclock[12];
+		char bgPblTime[12];
+		char bgPblWbg[12];
+		char tcPblHack[12];
+		char tcPblBeer[12];
+		char tcPblOclock[12];
+		char tcPblTime[12];
+	} __attribute__((__packed__)) CustomDataColorPbl;
+#endif
+	
+typedef struct {
+	char showAlwaysTime[3];
+	int neededTaps;
+	int tapCounter;
+	bool isAlwaysShownTimeActive;
+	bool isTimeLayerShown;
+	bool isBeerOclock;
+	enum FirstRowText isAlwaysShownBeerHackDefault;
+} __attribute__((__packed__)) CustomDataFlags;
+
+#ifdef PBL_COLOR
+	CustomDataColorBG userCDColorBG = {"", "", "", "", ""};
+	CustomDataColorTC userCDColorTC = {"", "", "", ""};
+#else
+	CustomDataColorPbl userCDColorPbl = {"", "", "", "", "", "", "", "", ""};
+#endif
+
+CustomDataFlags userCDFlags = {"off", 4, 0, 0, 0, 0, DEFAULT};
 
 /**
- * DEBUG method
+ * Workaround for needed Taps always 0
+ * after perform customisation
  */
-static void DEBUG() {
-	APP_LOG(APP_LOG_LEVEL_INFO, "----------- BEGIN DEBUG -----------");
-	APP_LOG(APP_LOG_LEVEL_INFO, "NEEDED_TAPS: %d", NEEDED_TAPS);
-	APP_LOG(APP_LOG_LEVEL_INFO, "tapCounter: %d", tapCounter);
-	APP_LOG(APP_LOG_LEVEL_INFO, "isAlwaysShownTimeActive: %d", isAlwaysShownTimeActive);
-	APP_LOG(APP_LOG_LEVEL_INFO, "isTimeLayerShown: %d", isTimeLayerShown);
-	APP_LOG(APP_LOG_LEVEL_INFO, "isBeerOclock: %d", isBeerOclock);
-	APP_LOG(APP_LOG_LEVEL_INFO, "isAlwaysShownBeerHackDefault <D=0; AB=1; AH=2>: %d", isAlwaysShownBeerHackDefault);
-	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUG ------------");
+bool isNeededTapsDirty = 0;
+int NEEDED_TAPS = 4;
+int TMP_NEEDED_TAPS = 0;
+
+//########################################################################################//
+//																																												//
+// 																	DEBUG METHODS																					//
+//																																												//
+//########################################################################################//
+#ifdef PBL_COLOR
+static void DEBUG_STRUCT_COLOR_BG() {
+	APP_LOG(APP_LOG_LEVEL_INFO, "----------- BEGIN DEBUG_STRUCT_COLOR_BG -----------");
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgHack: %s", userCDColorBG.bgHack);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgBeer: %s", userCDColorBG.bgBeer);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgOclock: %s", userCDColorBG.bgOclock);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgTime: %s", userCDColorBG.bgTime);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDColorBG.bgWbg: %s", userCDColorBG.bgWbg);
+	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUG_STRUCT_COLOR_BG ------------");	
 }
+#endif
 
+static void DEBUG_STRUCT_FLAGS() {
+	APP_LOG(APP_LOG_LEVEL_INFO, "----------- BEGIN DEBUG_STRUCT_FLAGS -----------");
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.showAlwaysTime: %s", userCDFlags.showAlwaysTime);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.neededTaps: %d", userCDFlags.neededTaps);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.tapCounter: %d", userCDFlags.tapCounter);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isAlwaysShownTimeActive: %d", userCDFlags.isAlwaysShownTimeActive);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isTimeLayerShown: %d", userCDFlags.isTimeLayerShown);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isBeerOclock: %d", userCDFlags.isBeerOclock);
+	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isAlwaysShownBeerHackDefault <D=0; AB=1; AH=2>: %d", userCDFlags.isAlwaysShownBeerHackDefault);
+	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUG_STRUCT_FLAGS ------------");	
+}	
 
+//########################################################################################//
+//																																												//
+// 																CHANGE UI METHODS																				//
+//																																												//
+//########################################################################################//
 /**
  * initialisation TextLayer
  */
@@ -76,7 +149,6 @@ static TextLayer* init_text_layer(GRect location, const char *text, GColor textC
 	layer_set_hidden((Layer *) layer, isHidden);
   return layer;
 }
-
 /**
  * change TextLayer
  */
@@ -84,7 +156,18 @@ static void change_text_layer_to(TextLayer *layer, GRect location, bool isHidden
   layer_set_frame((Layer *) layer, location);
 	layer_set_hidden((Layer *) layer, isHidden);
 }
-
+/**
+ *
+ */
+static void handle_time_layer(bool showTimeLayer) {
+	if (showTimeLayer) {
+		change_text_layer_to(s_oclock_layer, SECOND_ROW_WT_RECT, false);
+		change_text_layer_to(s_time_layer, THIRD_ROW_WT_RECT, false);
+	} else {
+		change_text_layer_to(s_oclock_layer, SECOND_ROW_WOT_RECT, false);
+		change_text_layer_to(s_time_layer, THIRD_ROW_WT_RECT, true);
+	}
+}
 /**
  * switch TextLayer
  */
@@ -97,33 +180,57 @@ static void switch_text_layers_first_row(bool showMeTime, bool hideMeHack, bool 
 		change_text_layer_to(s_beer_layer, FIRST_ROW_WOT_RECT, hideMeBeer);
 	}
 }
-
 /**
  * show time layer after specific tapCounter
  */
 static void show_time_layer() {
-	if (isBeerOclock == 1) {
+	if (userCDFlags.isBeerOclock == 1) {
 		switch_text_layers_first_row(true, true, false);
 	} else {
 		switch_text_layers_first_row(true, false, true);
 	}
-	change_text_layer_to(s_oclock_layer, SECOND_ROW_WT_RECT, false);
-	change_text_layer_to(s_time_layer, THIRD_ROW_WT_RECT, false);
+	handle_time_layer(true);
 }
-
 /**
  * hide time layer after specific tapCounter
  */
 static void hide_time_layer() {
-	if (isBeerOclock == 1) {
+	if (userCDFlags.isBeerOclock == 1) {
 		switch_text_layers_first_row(false, true, false);
 	} else {
 		switch_text_layers_first_row(false, false, true);
 	}
-	change_text_layer_to(s_oclock_layer, SECOND_ROW_WOT_RECT, false);
-	change_text_layer_to(s_time_layer, THIRD_ROW_WT_RECT, true);
+	handle_time_layer(false);
+}
+/**
+ * show / hide time layer
+ */
+static void time_layer_state(bool showTime) {
+	if (showTime) {
+		show_time_layer();
+		userCDFlags.tapCounter = 0;
+		userCDFlags.isTimeLayerShown = 1;
+	} else {
+		hide_time_layer();
+		userCDFlags.tapCounter = 0;
+		userCDFlags.isTimeLayerShown = 0;
+	}
+}
+/**
+ * change first row text layer
+ */
+static void handle_first_row_text_layer(enum FirstRowText e, bool setBeerOclock, bool hideHack, bool hideBeer) {
+	userCDFlags.isAlwaysShownBeerHackDefault = e;
+	userCDFlags.isBeerOclock = setBeerOclock;
+	if (userCDFlags.isTimeLayerShown == 1) switch_text_layers_first_row(true, hideHack, hideBeer);
+	else switch_text_layers_first_row(false, hideHack, hideBeer);
 }
 
+//########################################################################################//
+//																																												//
+// 																CHANGE COLOR METHODS																		//
+//																																												//
+//########################################################################################//
 /**
  * get color from string
  */
@@ -199,33 +306,36 @@ static GColor getColor(char *colorName) {
 		else return GColorBlack;
 	#endif
 }
-
 /**
  * set Color to Text or Background
  */
 static void setUserColor(Tuple *t, TextLayer *layer, bool isBackground) {
 	char colorNameFromTuple[30];
-	GColor userColor;
-	
 	strcpy(colorNameFromTuple, t->value->cstring);
-	userColor = getColor(colorNameFromTuple);
 		
-	if (isBackground) text_layer_set_background_color(layer, userColor);
-	else text_layer_set_text_color(layer, userColor);
+	if (isBackground) text_layer_set_background_color(layer, getColor(colorNameFromTuple));
+	else text_layer_set_text_color(layer, getColor(colorNameFromTuple));
 }
-
 /**
  * set Window Background Color
  */
 static void setUserWindowBGColor(Tuple *t, Window *window) {
 	char colorNameFromTuple[30];
-	GColor userColor;	
-	
 	strcpy(colorNameFromTuple, t->value->cstring);
-	userColor = getColor(colorNameFromTuple);		
-	window_set_background_color(window, userColor);
+	window_set_background_color(window, getColor(colorNameFromTuple));
+}
+/**
+ * get color from user customisation
+ */
+static GColor getUserColor(GColor defaultColor, char *colorName) {
+	return (strcmp(colorName, NULLSTRING) == 0) ? defaultColor : getColor(colorName);
 }
 
+//########################################################################################//
+//																																												//
+// 															CUSTOMISATION METHODS																			//
+//																																												//
+//########################################################################################//
 /**
  * customise watchface
  */
@@ -234,112 +344,125 @@ static void perform_customisation(Tuple *t) {
 	switch(t->key) {
 		case KEY_SHOW_ALWAYS_TIME: 
 			if (strcmp(t->value->cstring, "on") == 0) { 
-				isAlwaysShownTimeActive = 1; 
-				isTimeLayerShown = 1;
+				userCDFlags.isAlwaysShownTimeActive = 1; 
+				userCDFlags.isTimeLayerShown = 1;
 				show_time_layer(); 
 			} else {
-				isAlwaysShownTimeActive = 0;
+				userCDFlags.isAlwaysShownTimeActive = 0;
+				userCDFlags.isTimeLayerShown = 0;
+				hide_time_layer(); 
 			}
+			strcpy(userCDFlags.showAlwaysTime, t->value->cstring);
 			break;
 		
 		case KEY_CUSTOM_NEEDED_TAPS: 
-			if (strcmp(t->value->cstring, "") != 0) NEEDED_TAPS = atoi(t->value->cstring);
+			if (strcmp(t->value->cstring, "") == 0) { 
+				isNeededTapsDirty = 0;
+			} else {
+				isNeededTapsDirty = 1;
+				TMP_NEEDED_TAPS = atoi(t->value->cstring);
+			}
 			break;
 		
 		case KEY_SHOW_ALWAYS_BEER_OR_HACK:
 			if (strcmp(t->value->cstring, "Hack") == 0) {
-				isAlwaysShownBeerHackDefault = ALWAYS_HACK;
-				isBeerOclock = 0;
-				if (isTimeLayerShown == 1) {
-					switch_text_layers_first_row(true, false, true);
-				}	else {
-					switch_text_layers_first_row(false, false, true);
-				}				
+				handle_first_row_text_layer(ALWAYS_HACK, 0, false, true);		
 			} else if (strcmp(t->value->cstring, "Beer") == 0) {
-				isAlwaysShownBeerHackDefault = ALWAYS_BEER;
-				isBeerOclock = 1;
-				if (isTimeLayerShown == 1) {
-					switch_text_layers_first_row(true, true, false);
-				} else {
-					switch_text_layers_first_row(false, true, false);
-				}
-			}
-			else {
-				isAlwaysShownBeerHackDefault = DEFAULT;
+				handle_first_row_text_layer(ALWAYS_BEER, 1, true, false);		
+			}	else {
+				userCDFlags.isAlwaysShownBeerHackDefault = DEFAULT;
 			}
 			break;
 		
 		#ifdef PBL_COLOR
 			case KEY_BG_BEER: 
 				setUserColor(t, s_beer_layer, true);
+				strcpy(userCDColorBG.bgBeer, t->value->cstring);
 				break;
 
 			case KEY_BG_HACK: 
 				setUserColor(t, s_hack_layer, true);
+				strcpy(userCDColorBG.bgHack, t->value->cstring);
 				break;
 
 			case KEY_BG_OCLOCK: 
 				setUserColor(t, s_oclock_layer, true);
+				strcpy(userCDColorBG.bgOclock, t->value->cstring);
 				break;
 
 			case KEY_BG_TIME: 
 				setUserColor(t, s_time_layer, true);
+				strcpy(userCDColorBG.bgTime, t->value->cstring);
 				break;
 
 			case KEY_BG_WINBG: 
 				setUserWindowBGColor(t, s_window);		
+				strcpy(userCDColorBG.bgWbg, t->value->cstring);
 				break;
 
 			case KEY_TC_BEER: 
 				setUserColor(t, s_beer_layer, false);
+				strcpy(userCDColorTC.tcBeer, t->value->cstring);
 				break;
 
 			case KEY_TC_HACK: 
 				setUserColor(t, s_hack_layer, false);
+				strcpy(userCDColorTC.tcHack, t->value->cstring);
 				break;
 
 			case KEY_TC_OCLOCK: 
 				setUserColor(t, s_oclock_layer, false);
+				strcpy(userCDColorTC.tcOclock, t->value->cstring);
 				break;
 
 			case KEY_TC_TIME: 
 				setUserColor(t, s_time_layer, false);
+				strcpy(userCDColorTC.tcTime, t->value->cstring);
 				break;
 		#else
 			case KEY_BG_PBL_BEER: 
 				setUserColor(t, s_beer_layer, true);
+				strcpy(userCDColorPbl.bgPblBeer, t->value->cstring);
 				break;
 
 			case KEY_BG_PBL_HACK: 
 				setUserColor(t, s_hack_layer, true);
+				strcpy(userCDColorPbl.bgPblHack, t->value->cstring);
 				break;
 
 			case KEY_BG_PBL_OCLOCK: 
 				setUserColor(t, s_oclock_layer, true);
+				strcpy(userCDColorPbl.bgPblOclock, t->value->cstring);
 				break;
 
 			case KEY_BG_PBL_TIME: 
 				setUserColor(t, s_time_layer, true);
+				strcpy(userCDColorPbl.bgPblTime, t->value->cstring);
 				break;
 
-			case KEY_BG_WINBG: 
+			case KEY_BG_PBL_WINBG: 
 				setUserWindowBGColor(t, s_window);
+				strcpy(userCDColorPbl.bgPblWbg, t->value->cstring);
 				break;
 
 			case KEY_TC_PBL_BEER: 
 				setUserColor(t, s_beer_layer, false);
+				strcpy(userCDColorPbl.tcPblBeer, t->value->cstring);
 				break;
 
 			case KEY_TC_PBL_HACK: 
 				setUserColor(t, s_hack_layer, false);
+				strcpy(userCDColorPbl.tcPblHack, t->value->cstring);
 				break;
 
 			case KEY_TC_PBL_OCLOCK: 
 				setUserColor(t, s_oclock_layer, false);
+				strcpy(userCDColorPbl.tcPblOclock, t->value->cstring);
 				break;
 
 			case KEY_TC_PBL_TIME: 
 				setUserColor(t, s_time_layer, false);
+				strcpy(userCDColorPbl.tcPblTime, t->value->cstring);
 				break;
 		#endif
 		
@@ -347,7 +470,6 @@ static void perform_customisation(Tuple *t) {
 			APP_LOG(APP_LOG_LEVEL_ERROR, "Key %d not recognized!", (int)t->key);
 	}
 }
-
 /**
  * handle customisation AppMessage
  */
@@ -358,33 +480,34 @@ static void in_recv_handler(DictionaryIterator *iterator, void *context) {
 		perform_customisation(t);	
 		t = dict_read_next(iterator);
 	}
+	
+	if (isNeededTapsDirty == 1) userCDFlags.neededTaps = TMP_NEEDED_TAPS;
+	else userCDFlags.neededTaps = NEEDED_TAPS;
 }
 
+//########################################################################################//
+//																																												//
+// 																		HANDLER METHODS																			//
+//																																												//
+//########################################################################################//
 /**
  * handle tap count & show / hide time layer
  */
-static void handleTimeLayerState() {
-	tapCounter = tapCounter + 1;
+static void handle_time_layer_state() {
+	userCDFlags.tapCounter++;
 	
-	if (isAlwaysShownTimeActive == 1) {
-		show_time_layer();
-		tapCounter = 0;
-		isTimeLayerShown = 1;
+	if (userCDFlags.isAlwaysShownTimeActive == 1) {
+		time_layer_state(true);
 	} else {
-		if (tapCounter == NEEDED_TAPS) {
-			if (isTimeLayerShown == 1) {
-				hide_time_layer();
-				tapCounter = 0;
-				isTimeLayerShown = 0;
+		if (userCDFlags.tapCounter == userCDFlags.neededTaps) {
+			if (userCDFlags.isTimeLayerShown == 1) {
+				time_layer_state(false);
 			} else {
-				show_time_layer();
-				tapCounter = 0;
-				isTimeLayerShown = 1;
+				time_layer_state(true);
 			}				
 		}
 	}
 }
-
 /**
  * handle accelerometer
  */
@@ -392,56 +515,54 @@ static void tap_handler(AccelAxisType axis, int32_t direction) {
 	switch (axis) {
   case ACCEL_AXIS_X:
     if (direction > 0) {
-			handleTimeLayerState();
+			handle_time_layer_state();
     } else {
-			handleTimeLayerState();
+			handle_time_layer_state();
     }
     break;
   case ACCEL_AXIS_Y:
     if (direction > 0) {
-			handleTimeLayerState();
+			handle_time_layer_state();
     } else {
-			handleTimeLayerState();
+			handle_time_layer_state();
     }
     break;
   case ACCEL_AXIS_Z:
     if (direction > 0) {
-			handleTimeLayerState();
+			handle_time_layer_state();
     } else {
-			handleTimeLayerState();
+			handle_time_layer_state();
     }
     break;
   }
 }
-
 /**
  * handle first row text
  */
-static void handleFirstRowText(bool isWorkingTime) {
-	switch(isAlwaysShownBeerHackDefault) {
+static void handle_first_row_text(bool isWorkingTime) {
+	switch(userCDFlags.isAlwaysShownBeerHackDefault) {
 		case ALWAYS_HACK:
-		  if (isTimeLayerShown == 1) switch_text_layers_first_row(true, false, true);
+		  if (userCDFlags.isTimeLayerShown == 1) switch_text_layers_first_row(true, false, true);
 		  else switch_text_layers_first_row(false, false, true);
 			break;
 
 		case ALWAYS_BEER:
-		  if (isTimeLayerShown == 1) switch_text_layers_first_row(true, true, false);
+		  if (userCDFlags.isTimeLayerShown == 1) switch_text_layers_first_row(true, true, false);
 			else switch_text_layers_first_row(false, true, false);
 			break;
 
 		default:
 			if (isWorkingTime) {
-				layer_set_hidden((Layer *) s_hack_layer, false);
-				layer_set_hidden((Layer *) s_beer_layer, true);
-				isBeerOclock = 0;
+				if (userCDFlags.isTimeLayerShown == 1) switch_text_layers_first_row(true, false, true);
+				else switch_text_layers_first_row(false, false, true);
+				userCDFlags.isBeerOclock = 0;
 			} else {
-				layer_set_hidden((Layer *) s_hack_layer, true);
-				layer_set_hidden((Layer *) s_beer_layer, false);
-				isBeerOclock = 1;
+				if (userCDFlags.isTimeLayerShown == 1) switch_text_layers_first_row(true, true, false);
+				else switch_text_layers_first_row(false, true, false);
+				userCDFlags.isBeerOclock = 1;
 			}
 	}
 }
-
 /**
  * handle time changes
  */
@@ -454,9 +575,9 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 		// change textLayer
 		int h = tick_time->tm_hour;
 		if((h >= 9) == (h < 17)) {
-			handleFirstRowText(true);
+			handle_first_row_text(true);
 		} else {
-			handleFirstRowText(false);
+			handle_first_row_text(false);
 		}
 	} else {
 		//use 12 hour format
@@ -464,52 +585,121 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 		//change TextLayer
 		int h = tick_time->tm_hour;
     if((h >= 9) == (h < 17)) {
-			handleFirstRowText(true);
+			handle_first_row_text(true);
 		} else {
-			handleFirstRowText(false);
+			handle_first_row_text(false);
 		}
 	}	
-	
 	text_layer_set_text(s_time_layer, s_time_text);
 }
 
-static void window_load(Window *window) {
- 	#ifdef PBL_COLOR
-		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", GColorJaegerGreen, GColorBlack, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
-		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", GColorRed, GColorBlack, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
-		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", GColorWhite, GColorBlack, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
-		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", GColorWhite, GColorBlack, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
-	#else
-		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
-		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
-		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
-		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", GColorWhite, GColorClear, FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
-	#endif	
-		
+//########################################################################################//
+//																																												//
+// 																		PERSIST METHODS																			//
+//																																												//
+//########################################################################################//
+/**
+ * get user custom data
+ */
+static void get_user_data_from_persist() {	
 	#ifdef PBL_COLOR
-		window_set_background_color(s_window, GColorBlack);
+		if (persist_exists(KEY_CD_COLOR_BG)) persist_read_data(KEY_CD_COLOR_BG, &userCDColorBG, sizeof(userCDColorBG));
+		else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_BG not defined!");
+		if (persist_exists(KEY_CD_COLOR_TC)) persist_read_data(KEY_CD_COLOR_TC, &userCDColorTC, sizeof(userCDColorTC));
+		else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_TC not defined!");
 	#else
-		window_set_background_color(s_window, GColorBlack);
+		if (persist_exists(KEY_CD_COLOR_PBL)) persist_read_data(KEY_CD_COLOR_PBL, &userCDColorPbl, sizeof(userCDColorPbl));
+		else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_FLAGS not defined!");
 	#endif
 		
+	if (persist_exists(KEY_CD_COLOR_FLAGS)) persist_read_data(KEY_CD_COLOR_FLAGS, &userCDFlags, sizeof(userCDFlags));
+	else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_FLAGS not defined!");
+}
+/**
+ * save user custom data
+ */
+static void set_user_data_to_persist() { 	
+	APP_LOG(APP_LOG_LEVEL_INFO, "set_user_data_to_persist: userCDFlags.neededTaps: %d", userCDFlags.neededTaps);
+	
+	#ifdef PBL_COLOR
+		persist_write_data(KEY_CD_COLOR_BG, &userCDColorBG, sizeof(userCDColorBG));
+		persist_write_data(KEY_CD_COLOR_TC, &userCDColorTC, sizeof(userCDColorTC));
+	#else
+		persist_write_data(KEY_CD_COLOR_PBL, &userCDColorPbl, sizeof(userCDColorPbl));
+	#endif
+	persist_write_data(KEY_CD_COLOR_FLAGS, &userCDFlags, sizeof(userCDFlags));
+}
+/**
+ * set user flags
+ */
+static void set_user_flags() {
+	switch (userCDFlags.isAlwaysShownBeerHackDefault) {
+		case ALWAYS_HACK:
+			if (userCDFlags.isAlwaysShownTimeActive == 1 || userCDFlags.isTimeLayerShown == 1) { switch_text_layers_first_row(true, false, true); handle_time_layer(true); } 
+			else { switch_text_layers_first_row(false, false, true); handle_time_layer(false); }
+			break;
+		case ALWAYS_BEER:
+			if (userCDFlags.isAlwaysShownTimeActive == 1 || userCDFlags.isTimeLayerShown == 1) { switch_text_layers_first_row(true, true, false); handle_time_layer(true); }
+			else { switch_text_layers_first_row(false, true, false); handle_time_layer(false); }
+			break;
+		case DEFAULT:
+			if (userCDFlags.isAlwaysShownTimeActive == 1 || userCDFlags.isTimeLayerShown == 1) show_time_layer();
+			else hide_time_layer();
+			break;
+	}
+}
+
+//########################################################################################//
+//																																												//
+// 																	LIFE CYCLE METHODS																		//
+//																																												//
+//########################################################################################//
+/**
+ * load window
+ */
+static void window_load(Window *window) {
+	get_user_data_from_persist();
+	
+	DEBUG_STRUCT_FLAGS();
+	
+	#ifdef PBL_COLOR
+		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", getUserColor(GColorJaegerGreen, userCDColorTC.tcHack), getUserColor(GColorBlack, userCDColorBG.bgHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
+		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", getUserColor(GColorRed, userCDColorTC.tcBeer), getUserColor(GColorBlack, userCDColorBG.bgBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
+		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", getUserColor(GColorWhite, userCDColorTC.tcOclock), getUserColor(GColorBlack, userCDColorBG.bgOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
+		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", getUserColor(GColorWhite, userCDColorTC.tcTime), getUserColor(GColorBlack, userCDColorBG.bgTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
+		window_set_background_color(s_window, getUserColor(GColorBlack, userCDColorBG.bgWbg));
+	#else
+		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", getUserColor(GColorWhite, userCDColorPbl.tcPblHack), getUserColor(GColorClear, userCDColorPbl.bgPblHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
+		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", getUserColor(GColorWhite, userCDColorPbl.tcPblBeer), getUserColor(GColorClear, userCDColorPbl.bgPblBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
+		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", getUserColor(GColorWhite, userCDColorPbl.tcPblOclock), getUserColor(GColorClear, userCDColorPbl.bgPblOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
+		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", getUserColor(GColorWhite, userCDColorPbl.tcPblTime), getUserColor(GColorClear, userCDColorPbl.bgPblTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
+		window_set_background_color(s_window, getUserColor(GColorBlack, userCDColorPbl.bgPblWbg));
+	#endif	
+					
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_hack_layer));
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_beer_layer));
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_oclock_layer));
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 	
+	set_user_flags();
+	
 	tick_timer_service_subscribe(MINUTE_UNIT, &handle_minute_tick);
 	accel_tap_service_subscribe(tap_handler);
 }
- 
+/**
+ * destroy window elements
+ */
 static void window_unload(Window *window) {
 	text_layer_destroy(s_hack_layer);
 	text_layer_destroy(s_beer_layer);
 	text_layer_destroy(s_oclock_layer);
 	text_layer_destroy(s_time_layer);
 }
- 
-static void init() {
-  s_window = window_create();
+/**
+ * init watchface
+ */
+static void init() {	
+	s_window = window_create();
   WindowHandlers handlers = {
     .load = window_load,
     .unload = window_unload
@@ -520,12 +710,17 @@ static void init() {
 	app_message_register_inbox_received((AppMessageInboxReceived) in_recv_handler);
 	app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
 }
- 
+/**
+ * save & destroy window & unsubscribe service
+ */
 static void deinit() {
+	set_user_data_to_persist();
   window_destroy(s_window);
 	accel_tap_service_unsubscribe();
 }
- 
+/**
+ * program start
+ */
 int main(void) {
   init();
   app_event_loop();

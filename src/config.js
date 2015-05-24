@@ -2,8 +2,6 @@
  * http://www.willpeavy.com/minifier/
  * http://jscompress.com/
  * http://cssminifier.com/
- * https://ninedof.wordpress.com/2014/05/24/pebble-sdk-2-0-tutorial-9-app-configuration/
- * http://developer.getpebble.com/docs/c/Foundation/Storage/
  */
 var isPebbleTime;
 var options = {};
@@ -23,19 +21,27 @@ Pebble.addEventListener("ready", function(e) {
 
 Pebble.addEventListener("showConfiguration", function(e) {
 	console.log("Showing Configuration Page!");
-	Pebble.openURL('http://flashback2k14.github.io/hackoclock/public/index_min.html?' + encodeURIComponent(JSON.stringify(options)));
+	if (typeof options.selectAlwaysTime === "undefined") {
+		var customPebbleData = window.localStorage.getItem("customPebbleOptions");
+		Pebble.openURL('http://flashback2k14.github.io/hackoclock/public/index_min.html?' + encodeURIComponent(customPebbleData));
+		console.log("DEBUG: customPebbleData: " + customPebbleData);
+	} else {
+		Pebble.openURL('http://flashback2k14.github.io/hackoclock/public/index_min.html?' + encodeURIComponent(JSON.stringify(options)));
+		console.log("DEBUG: Options: " + JSON.stringify(options));
+	}
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {
 	console.log("Configuration Page closed!");
 	if (e.response.charAt(0) === "{" && e.response.slice(-1) === "}" && e.response.length > 5) {
 		options = JSON.parse(decodeURIComponent(e.response));
+		window.localStorage.setItem("customPebbleOptions", JSON.stringify(options));
 		//console.log("DEBUG: Options: " + JSON.stringify(options));
 		
-		var getUserChooseForFirstRow = "default";
+		var getUserChooseForFirstRow = "Default";
 		if (options.rbBeer) getUserChooseForFirstRow = "Beer";
 		else if (options.rbHack) getUserChooseForFirstRow = "Hack";
-		else getUserChooseForFirstRow = "default";
+		else getUserChooseForFirstRow = "Default";
 		
 		if (isPebbleTime) {
 			customData = {
@@ -69,7 +75,7 @@ Pebble.addEventListener("webviewclosed", function(e) {
 			};
 		}
 		//console.log("DEBUG: CustomData: " + JSON.stringify(customData));
-		
+				
 		Pebble.sendAppMessage(customData, 
 		function(e) {console.log("Sending customisation data to pebble...");},
 		function(e) {console.log("Sending customisation data to pebble failed!");});
