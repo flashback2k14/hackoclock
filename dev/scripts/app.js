@@ -51,8 +51,8 @@ function setOptionsFromPebble() {
         else if (key === "tcPblTime" && obj["rbPebble"]) $("#tcPblTime").val(obj["tcPblTime"]).selectmenu("refresh");
         else if (key === "inputBeginWorkingTime") $("#inputBeginWorkingTime").val(obj["inputBeginWorkingTime"]);
         else if (key === "inputEndWorkingTime") $("#inputEndWorkingTime").val(obj["inputEndWorkingTime"]);
-        else if (key === "inputBeerText") $("#inputBeerText").val(obj["inputBeerText"]);
-        else if (key === "inputHackText") $("#inputHackText").val(obj["inputHackText"]);
+        /*else if (key === "inputBeerText") $("#inputBeerText").val(obj["inputBeerText"]);
+        else if (key === "inputHackText") $("#inputHackText").val(obj["inputHackText"]);*/
         else if ($("input[type=radio][name=rbFirstRowText][value=default]").is(':checked') === !obj["rbDefault"]) $("input[type=radio][name=rbFirstRowText][value=default]").prop({checked: false}).checkboxradio("refresh");
         else console.log("key: " + key + " not defined!");
     }
