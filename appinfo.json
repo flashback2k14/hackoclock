@@ -10,6 +10,10 @@
         "KEY_BG_PBL_WINBG": 15,
         "KEY_BG_TIME": 5,
         "KEY_BG_WINBG": 6,
+        "KEY_CUSTOM_BEER_TEXT": 24,
+        "KEY_CUSTOM_BEGIN_TIME": 21,
+        "KEY_CUSTOM_END_TIME": 22,
+        "KEY_CUSTOM_HACK_TEXT": 23,
         "KEY_CUSTOM_NEEDED_TAPS": 1,
         "KEY_SHOW_ALWAYS_BEER_OR_HACK": 20,
         "KEY_SHOW_ALWAYS_TIME": 0,
@@ -45,7 +49,7 @@
         "basalt"
     ],
     "uuid": "574e27ce-f2e9-4c0e-9702-36c66eae0ffe",
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }

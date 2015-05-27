@@ -10,11 +10,10 @@
 #define KEY_CD_COLOR_TC 41
 #define KEY_CD_COLOR_PBL 42
 #define KEY_CD_COLOR_FLAGS 43
-	
+#define KEY_CUSTOM_DATA 44
 	
 static Window* s_window;
 static TextLayer *s_hack_layer, *s_beer_layer, *s_oclock_layer, *s_time_layer;
-static const char *NULLSTRING = "";
 	
 enum AppMessageKeys {
 	KEY_SHOW_ALWAYS_TIME = 0,
@@ -37,7 +36,11 @@ enum AppMessageKeys {
 	KEY_TC_PBL_HACK = 17,
 	KEY_TC_PBL_OCLOCK = 18,
 	KEY_TC_PBL_TIME = 19,
-	KEY_SHOW_ALWAYS_BEER_OR_HACK = 20
+	KEY_SHOW_ALWAYS_BEER_OR_HACK = 20,
+	KEY_CUSTOM_BEGIN_TIME = 21,
+	KEY_CUSTOM_END_TIME = 22,
+	KEY_CUSTOM_HACK_TEXT = 23,
+	KEY_CUSTOM_BEER_TEXT = 24
 };
 
 enum FirstRowText {
@@ -85,6 +88,13 @@ typedef struct {
 	enum FirstRowText isAlwaysShownBeerHackDefault;
 } __attribute__((__packed__)) CustomDataFlags;
 
+typedef struct {
+	int customBeginHour;
+	int customEndHour;
+	char customHackText[6];
+	char customBeerText[6];
+} __attribute__((__packed__)) CustomData;
+
 #ifdef PBL_COLOR
 	CustomDataColorBG userCDColorBG = {"", "", "", "", ""};
 	CustomDataColorTC userCDColorTC = {"", "", "", ""};
@@ -93,6 +103,7 @@ typedef struct {
 #endif
 
 CustomDataFlags userCDFlags = {"off", 4, 0, 0, 0, 0, DEFAULT};
+CustomData userCustomData = {9, 17, "HACK", "BEER"};
 
 /**
  * Workaround for needed Taps always 0
@@ -101,6 +112,20 @@ CustomDataFlags userCDFlags = {"off", 4, 0, 0, 0, 0, DEFAULT};
 bool isNeededTapsDirty = 0;
 int NEEDED_TAPS = 4;
 int TMP_NEEDED_TAPS = 0;
+
+bool isBeginHourDirty = 0;
+int BEGIN_HOUR = 9;
+int TMP_BEGIN_HOUR = 0;
+
+bool isEndHourDirty = 0;
+int END_HOUR = 17;
+int TMP_END_HOUR = 0;
+
+/*bool isHackTextDirty = 0;
+char TMP_HACK_TEXT[6];
+bool isBeerTextDirty = 0;
+char TMP_BEER_TEXT[6];*/
+
 
 //########################################################################################//
 //																																												//
@@ -121,13 +146,13 @@ static void DEBUG_STRUCT_COLOR_BG() {
 
 static void DEBUG_STRUCT_FLAGS() {
 	APP_LOG(APP_LOG_LEVEL_INFO, "----------- BEGIN DEBUG_STRUCT_FLAGS -----------");
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.showAlwaysTime: %s", userCDFlags.showAlwaysTime);
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.neededTaps: %d", userCDFlags.neededTaps);
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.tapCounter: %d", userCDFlags.tapCounter);
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isAlwaysShownTimeActive: %d", userCDFlags.isAlwaysShownTimeActive);
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isTimeLayerShown: %d", userCDFlags.isTimeLayerShown);
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isBeerOclock: %d", userCDFlags.isBeerOclock);
-	APP_LOG(APP_LOG_LEVEL_INFO, "userCDFlags.isAlwaysShownBeerHackDefault <D=0; AB=1; AH=2>: %d", userCDFlags.isAlwaysShownBeerHackDefault);
+	APP_LOG(APP_LOG_LEVEL_INFO, "showAlwaysTime: %s", userCDFlags.showAlwaysTime);
+	APP_LOG(APP_LOG_LEVEL_INFO, "neededTaps / tapCounter: %d / %d", userCDFlags.neededTaps, userCDFlags.tapCounter);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isAlwaysShownTimeActive / isTimeLayerShown: %d / %d", userCDFlags.isAlwaysShownTimeActive, userCDFlags.isTimeLayerShown);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isBeerOclock: %d", userCDFlags.isBeerOclock);
+	APP_LOG(APP_LOG_LEVEL_INFO, "isAlwaysShownBeerHackDefault <D=0; AB=1; AH=2>: %d", userCDFlags.isAlwaysShownBeerHackDefault);
+	APP_LOG(APP_LOG_LEVEL_INFO, "working Time: %d To %d", userCustomData.customBeginHour, userCustomData.customEndHour);
+	//APP_LOG(APP_LOG_LEVEL_INFO, "first row Text: %s and %s", userCustomData.customHackText, userCustomData.customBeerText);
 	APP_LOG(APP_LOG_LEVEL_INFO, "------------ END DEBUG_STRUCT_FLAGS ------------");	
 }	
 
@@ -150,6 +175,12 @@ static TextLayer* init_text_layer(GRect location, const char *text, GColor textC
   return layer;
 }
 /**
+ * set text to layer
+ */
+static void set_text_to_layer(TextLayer *layer, const char *text) {
+	text_layer_set_text(layer, text);
+}
+/**
  * change TextLayer
  */
 static void change_text_layer_to(TextLayer *layer, GRect location, bool isHidden) {
@@ -157,7 +188,7 @@ static void change_text_layer_to(TextLayer *layer, GRect location, bool isHidden
 	layer_set_hidden((Layer *) layer, isHidden);
 }
 /**
- *
+ * handle time layer 
  */
 static void handle_time_layer(bool showTimeLayer) {
 	if (showTimeLayer) {
@@ -327,8 +358,8 @@ static void setUserWindowBGColor(Tuple *t, Window *window) {
 /**
  * get color from user customisation
  */
-static GColor getUserColor(GColor defaultColor, char *colorName) {
-	return (strcmp(colorName, NULLSTRING) == 0) ? defaultColor : getColor(colorName);
+static GColor get_user_color(GColor defaultColor, char *colorName) {
+	return (strcmp(colorName, "") == 0) ? defaultColor : getColor(colorName);
 }
 
 //########################################################################################//
@@ -340,7 +371,6 @@ static GColor getUserColor(GColor defaultColor, char *colorName) {
  * customise watchface
  */
 static void perform_customisation(Tuple *t) {
-	
 	switch(t->key) {
 		case KEY_SHOW_ALWAYS_TIME: 
 			if (strcmp(t->value->cstring, "on") == 0) { 
@@ -373,6 +403,60 @@ static void perform_customisation(Tuple *t) {
 				userCDFlags.isAlwaysShownBeerHackDefault = DEFAULT;
 			}
 			break;
+		
+		case KEY_CUSTOM_BEGIN_TIME:
+			if (strcmp(t->value->cstring, "") == 0) { 
+				isBeginHourDirty = 0;
+			} else {
+				isBeginHourDirty = 1;
+				TMP_BEGIN_HOUR = atoi(t->value->cstring);
+			}
+			break;
+		
+		case KEY_CUSTOM_END_TIME:
+			if (strcmp(t->value->cstring, "") == 0) { 
+				isEndHourDirty = 0;
+			} else {
+				isEndHourDirty = 1;
+				TMP_END_HOUR = atoi(t->value->cstring);
+			}
+			break;	
+		
+		/*case KEY_CUSTOM_HACK_TEXT:
+			if (strcmp(t->value->cstring, "") != 0) { 
+				APP_LOG(APP_LOG_LEVEL_INFO, "KEY_CUSTOM_HACK_TEXT: t->value->cstring: %s", t->value->cstring);
+				APP_LOG(APP_LOG_LEVEL_INFO, "KEY_CUSTOM_HACK_TEXT: userCustomData.customHackText: %s", userCustomData.customHackText);
+				strcpy(userCustomData.customHackText, t->value->cstring);
+				APP_LOG(APP_LOG_LEVEL_INFO, "KEY_CUSTOM_HACK_TEXT: userCustomData.customHackText: %s", userCustomData.customHackText);
+			}
+			break;
+
+		case KEY_CUSTOM_BEER_TEXT:
+			if (strcmp(t->value->cstring, "") != 0) { 
+				APP_LOG(APP_LOG_LEVEL_INFO, "KEY_CUSTOM_BEER_TEXT: t->value->cstring: %s", t->value->cstring);
+				APP_LOG(APP_LOG_LEVEL_INFO, "KEY_CUSTOM_BEER_TEXT: userCustomData.customBeerText: %s", userCustomData.customBeerText);
+				strcpy(userCustomData.customBeerText, t->value->cstring);
+				APP_LOG(APP_LOG_LEVEL_INFO, "KEY_CUSTOM_BEER_TEXT: userCustomData.customBeerText: %s", userCustomData.customBeerText);
+			}
+			break;
+		
+		case KEY_CUSTOM_HACK_TEXT:
+			if (strcmp(t->value->cstring, "") == 0) { 
+				isHackTextDirty = 0;
+			} else {
+				isHackTextDirty = 1;
+				strcpy(TMP_HACK_TEXT, t->value->cstring);
+			}
+			break;
+
+		case KEY_CUSTOM_BEER_TEXT:
+			if (strcmp(t->value->cstring, "") == 0) { 
+				isBeerTextDirty = 0;
+			} else {
+				isBeerTextDirty = 1;
+				strcpy(TMP_BEER_TEXT, t->value->cstring);
+			}
+			break;*/
 		
 		#ifdef PBL_COLOR
 			case KEY_BG_BEER: 
@@ -483,6 +567,21 @@ static void in_recv_handler(DictionaryIterator *iterator, void *context) {
 	
 	if (isNeededTapsDirty == 1) userCDFlags.neededTaps = TMP_NEEDED_TAPS;
 	else userCDFlags.neededTaps = NEEDED_TAPS;
+	
+	if (isBeginHourDirty == 1) userCustomData.customBeginHour = TMP_BEGIN_HOUR;
+	else userCustomData.customBeginHour = BEGIN_HOUR;
+	
+	if (isEndHourDirty == 1) userCustomData.customEndHour = TMP_END_HOUR;
+	else userCustomData.customEndHour = END_HOUR;
+		
+	/*if (isHackTextDirty == 1) strcpy(userCustomData.customHackText, TMP_HACK_TEXT);
+	else strcpy(userCustomData.customHackText, "HACK");
+	
+	if (isBeerTextDirty == 1) strcpy(userCustomData.customBeerText, TMP_BEER_TEXT);
+	else strcpy(userCustomData.customBeerText, "BEER");
+	
+	set_text_to_layer(s_hack_layer, userCustomData.customHackText);
+	set_text_to_layer(s_beer_layer, userCustomData.customBeerText);*/
 }
 
 //########################################################################################//
@@ -568,13 +667,13 @@ static void handle_first_row_text(bool isWorkingTime) {
  */
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 	static char s_time_text[] = "00:00";
-
+	
 	if(clock_is_24h_style() == true) {
 		// use 24 hour format
 		strftime(s_time_text, sizeof("00:00"), "%H:%M", tick_time);
 		// change textLayer
 		int h = tick_time->tm_hour;
-		if((h >= 9) == (h < 17)) {
+		if((h >= userCustomData.customBeginHour) == (h < userCustomData.customEndHour)) {
 			handle_first_row_text(true);
 		} else {
 			handle_first_row_text(false);
@@ -584,7 +683,7 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 		strftime(s_time_text, sizeof("00:00"), "%I:%M", tick_time);
 		//change TextLayer
 		int h = tick_time->tm_hour;
-    if((h >= 9) == (h < 17)) {
+    if((h >= userCustomData.customBeginHour) == (h < userCustomData.customEndHour)) {
 			handle_first_row_text(true);
 		} else {
 			handle_first_row_text(false);
@@ -611,15 +710,18 @@ static void get_user_data_from_persist() {
 		if (persist_exists(KEY_CD_COLOR_PBL)) persist_read_data(KEY_CD_COLOR_PBL, &userCDColorPbl, sizeof(userCDColorPbl));
 		else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_FLAGS not defined!");
 	#endif
-		
+	
 	if (persist_exists(KEY_CD_COLOR_FLAGS)) persist_read_data(KEY_CD_COLOR_FLAGS, &userCDFlags, sizeof(userCDFlags));
+	else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_FLAGS not defined!");
+	
+	if (persist_exists(KEY_CUSTOM_DATA)) persist_read_data(KEY_CUSTOM_DATA, &userCustomData, sizeof(userCustomData));
 	else APP_LOG(APP_LOG_LEVEL_ERROR, "KEY_CD_COLOR_FLAGS not defined!");
 }
 /**
  * save user custom data
  */
 static void set_user_data_to_persist() { 	
-	APP_LOG(APP_LOG_LEVEL_INFO, "set_user_data_to_persist: userCDFlags.neededTaps: %d", userCDFlags.neededTaps);
+	//DEBUG_STRUCT_FLAGS();
 	
 	#ifdef PBL_COLOR
 		persist_write_data(KEY_CD_COLOR_BG, &userCDColorBG, sizeof(userCDColorBG));
@@ -628,11 +730,36 @@ static void set_user_data_to_persist() {
 		persist_write_data(KEY_CD_COLOR_PBL, &userCDColorPbl, sizeof(userCDColorPbl));
 	#endif
 	persist_write_data(KEY_CD_COLOR_FLAGS, &userCDFlags, sizeof(userCDFlags));
+	persist_write_data(KEY_CUSTOM_DATA, &userCustomData, sizeof(userCustomData));
+}
+
+//########################################################################################//
+//																																												//
+// 																		RESTORE WATCHFACE																		//
+//																																												//
+//########################################################################################//
+/**
+ * get text for first row from custom data
+ */
+static char* get_user_text_from_key(bool isHack) {
+	//if (isHack) { APP_LOG(APP_LOG_LEVEL_INFO, "userCustomData.customHackText: %s", userCustomData.customHackText); return (strcmp(userCustomData.customHackText, "") == 0) ? "HACK" : userCustomData.customHackText; }
+	//else { APP_LOG(APP_LOG_LEVEL_INFO, "userCustomData.customBeerText: %s", userCustomData.customBeerText); return (strcmp(userCustomData.customBeerText, "") == 0) ? "BEER" : userCustomData.customBeerText; }
+	if (isHack) return "HACK";
+	else return "BEER";
+}
+/**
+ * set text for first row from custom data
+ */
+static void set_user_text_from_key() {
+	set_text_to_layer(s_hack_layer, get_user_text_from_key(true));
+	set_text_to_layer(s_beer_layer, get_user_text_from_key(false));
 }
 /**
  * set user flags
  */
 static void set_user_flags() {
+	set_user_text_from_key();
+	
 	switch (userCDFlags.isAlwaysShownBeerHackDefault) {
 		case ALWAYS_HACK:
 			if (userCDFlags.isAlwaysShownTimeActive == 1 || userCDFlags.isTimeLayerShown == 1) { switch_text_layers_first_row(true, false, true); handle_time_layer(true); } 
@@ -654,26 +781,27 @@ static void set_user_flags() {
 // 																	LIFE CYCLE METHODS																		//
 //																																												//
 //########################################################################################//
+
 /**
  * load window
  */
 static void window_load(Window *window) {
 	get_user_data_from_persist();
-	
-	DEBUG_STRUCT_FLAGS();
+		
+	//DEBUG_STRUCT_FLAGS();
 	
 	#ifdef PBL_COLOR
-		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", getUserColor(GColorJaegerGreen, userCDColorTC.tcHack), getUserColor(GColorBlack, userCDColorBG.bgHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
-		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", getUserColor(GColorRed, userCDColorTC.tcBeer), getUserColor(GColorBlack, userCDColorBG.bgBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
-		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", getUserColor(GColorWhite, userCDColorTC.tcOclock), getUserColor(GColorBlack, userCDColorBG.bgOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
-		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", getUserColor(GColorWhite, userCDColorTC.tcTime), getUserColor(GColorBlack, userCDColorBG.bgTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
-		window_set_background_color(s_window, getUserColor(GColorBlack, userCDColorBG.bgWbg));
+		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, get_user_text_from_key(true), get_user_color(GColorJaegerGreen, userCDColorTC.tcHack), get_user_color(GColorBlack, userCDColorBG.bgHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
+		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, get_user_text_from_key(false), get_user_color(GColorRed, userCDColorTC.tcBeer), get_user_color(GColorBlack, userCDColorBG.bgBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
+		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", get_user_color(GColorWhite, userCDColorTC.tcOclock), get_user_color(GColorBlack, userCDColorBG.bgOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
+		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", get_user_color(GColorWhite, userCDColorTC.tcTime), get_user_color(GColorBlack, userCDColorBG.bgTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
+		window_set_background_color(s_window, get_user_color(GColorBlack, userCDColorBG.bgWbg));
 	#else
-		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, "HACK", getUserColor(GColorWhite, userCDColorPbl.tcPblHack), getUserColor(GColorClear, userCDColorPbl.bgPblHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
-		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, "BEER", getUserColor(GColorWhite, userCDColorPbl.tcPblBeer), getUserColor(GColorClear, userCDColorPbl.bgPblBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
-		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", getUserColor(GColorWhite, userCDColorPbl.tcPblOclock), getUserColor(GColorClear, userCDColorPbl.bgPblOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
-		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", getUserColor(GColorWhite, userCDColorPbl.tcPblTime), getUserColor(GColorClear, userCDColorPbl.bgPblTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
-		window_set_background_color(s_window, getUserColor(GColorBlack, userCDColorPbl.bgPblWbg));
+		s_hack_layer = init_text_layer(FIRST_ROW_WOT_RECT, get_user_text_from_key(true), get_user_color(GColorWhite, userCDColorPbl.tcPblHack), get_user_color(GColorClear, userCDColorPbl.bgPblHack), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, false);
+		s_beer_layer = init_text_layer(FIRST_ROW_WOT_RECT, get_user_text_from_key(false), get_user_color(GColorWhite, userCDColorPbl.tcPblBeer), get_user_color(GColorClear, userCDColorPbl.bgPblBeer), FONT_KEY_BITHAM_42_BOLD, GTextAlignmentCenter, true);
+		s_oclock_layer = init_text_layer(SECOND_ROW_WOT_RECT, "o'clock", get_user_color(GColorWhite, userCDColorPbl.tcPblOclock), get_user_color(GColorClear, userCDColorPbl.bgPblOclock), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, false);
+		s_time_layer = init_text_layer(THIRD_ROW_WT_RECT, "00:00", get_user_color(GColorWhite, userCDColorPbl.tcPblTime), get_user_color(GColorClear, userCDColorPbl.bgPblTime), FONT_KEY_BITHAM_42_LIGHT, GTextAlignmentCenter, true);
+		window_set_background_color(s_window, get_user_color(GColorBlack, userCDColorPbl.bgPblWbg));
 	#endif	
 					
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_hack_layer));

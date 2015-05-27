@@ -24,10 +24,12 @@ Pebble.addEventListener("showConfiguration", function(e) {
 	if (typeof options.selectAlwaysTime === "undefined") {
 		var customPebbleData = window.localStorage.getItem("customPebbleOptions");
 		Pebble.openURL('http://flashback2k14.github.io/hackoclock/public/index_min.html?' + encodeURIComponent(customPebbleData));
-		console.log("DEBUG: customPebbleData: " + customPebbleData);
+		//Pebble.openURL('http://flashback2k14.github.io/hackoclock/dev/index.html?' + encodeURIComponent(customPebbleData));
+		//console.log("DEBUG: customPebbleData: " + customPebbleData);
 	} else {
 		Pebble.openURL('http://flashback2k14.github.io/hackoclock/public/index_min.html?' + encodeURIComponent(JSON.stringify(options)));
-		console.log("DEBUG: Options: " + JSON.stringify(options));
+		//Pebble.openURL('http://flashback2k14.github.io/hackoclock/dev/index.html?' + encodeURIComponent(JSON.stringify(options)));
+		//console.log("DEBUG: Options: " + JSON.stringify(options));
 	}
 });
 
@@ -36,18 +38,21 @@ Pebble.addEventListener("webviewclosed", function(e) {
 	if (e.response.charAt(0) === "{" && e.response.slice(-1) === "}" && e.response.length > 5) {
 		options = JSON.parse(decodeURIComponent(e.response));
 		window.localStorage.setItem("customPebbleOptions", JSON.stringify(options));
-		//console.log("DEBUG: Options: " + JSON.stringify(options));
-		
+				
 		var getUserChooseForFirstRow = "Default";
 		if (options.rbBeer) getUserChooseForFirstRow = "Beer";
 		else if (options.rbHack) getUserChooseForFirstRow = "Hack";
 		else getUserChooseForFirstRow = "Default";
-		
+						
 		if (isPebbleTime) {
 			customData = {
 				"KEY_SHOW_ALWAYS_TIME" : options.selectAlwaysTime,
 				"KEY_CUSTOM_NEEDED_TAPS" : options.inputNeededTaps,
 				"KEY_SHOW_ALWAYS_BEER_OR_HACK" : getUserChooseForFirstRow,
+				"KEY_CUSTOM_BEGIN_TIME" : options.inputBeginWorkingTime,
+				"KEY_CUSTOM_END_TIME" : options.inputEndWorkingTime,
+				//"KEY_CUSTOM_HACK_TEXT" : options.inputHackText,
+				//"KEY_CUSTOM_BEER_TEXT" : options.inputBeerText,
 				"KEY_BG_BEER"  : options.bgBeer,
 				"KEY_BG_HACK" : options.bgHack,
 				"KEY_BG_OCLOCK" : options.bgOclock,
@@ -63,6 +68,10 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				"KEY_SHOW_ALWAYS_TIME" : options.selectAlwaysTime,
 				"KEY_CUSTOM_NEEDED_TAPS" : options.inputNeededTaps,
 				"KEY_SHOW_ALWAYS_BEER_OR_HACK" : getUserChooseForFirstRow,
+				"KEY_CUSTOM_BEGIN_TIME" : options.inputBeginWorkingTime,
+				"KEY_CUSTOM_END_TIME" : options.inputEndWorkingTime,
+				//"KEY_CUSTOM_HACK_TEXT" : options.inputHackText,
+				//"KEY_CUSTOM_BEER_TEXT" : options.inputBeerText,
 				"KEY_BG_PBL_BEER"  : options.bgPblBeer,
 				"KEY_BG_PBL_HACK" : options.bgPblHack,
 				"KEY_BG_PBL_OCLOCK" : options.bgPblOclock,
@@ -74,6 +83,7 @@ Pebble.addEventListener("webviewclosed", function(e) {
 				"KEY_TC_PBL_TIME" : options.tcPblTime
 			};
 		}
+		//console.log("DEBUG: Options: " + JSON.stringify(options));
 		//console.log("DEBUG: CustomData: " + JSON.stringify(customData));
 				
 		Pebble.sendAppMessage(customData, 
